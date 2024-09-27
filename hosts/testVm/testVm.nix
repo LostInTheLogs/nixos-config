@@ -4,21 +4,8 @@
   lib,
   ...
 }: {
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-  ];
-
   my.profiles.testVm.enable = true;
 
-  # home-manager = {
-  #   useUserPackages = true;
-  #   extraSpecialArgs = {inherit inputs;};
-  #   users = {
-  #     lost = import ./home.nix;
-  #   };
-  # };
-
-  programs.zsh.enable = true;
   users.users.lost = {
     isNormalUser = true;
     extraGroups = ["wheel"];

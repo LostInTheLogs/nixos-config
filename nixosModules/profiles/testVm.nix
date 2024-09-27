@@ -3,7 +3,6 @@
 # https://www.spice-space.org/spice-user-manual.html#agent
 {
   pkgs,
-  modulesPath,
   lib,
   config,
   ...
