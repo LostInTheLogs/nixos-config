@@ -22,5 +22,18 @@ in {
 
     systemd.extraConfig = timeoutConfig;
     systemd.user.extraConfig = timeoutConfig;
+
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.timeout = 2;
+
+    services.flatpak.enable = true;
+    xdg.portal.enable = true;
+
+    services.xserver.enable = true;
+    services.displayManager.sddm.enable = true;
+    services.desktopManager.plasma6.enable = true;
+    services.displayManager.sddm.wayland.enable = true;
+    services.displayManager.defaultSession = "plasmax11";
   };
 }
