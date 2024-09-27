@@ -24,6 +24,8 @@
 
     nixosModules = import ./nixosModules args;
 
+    nixdOptions = mylib.modules;
+
     formatter = mylib.forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
   };
 }
