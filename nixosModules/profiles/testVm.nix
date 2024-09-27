@@ -23,10 +23,6 @@ in {
       memorySize = 8192;
       cores = 6;
       qemu.options = [
-        # Better display option
-        "-vga virtio"
-        "-display gtk,zoom-to-fit=false"
-
         "-machine vmport=off"
         "-vga qxl"
         "-spice port=3001,disable-ticketing=on "
