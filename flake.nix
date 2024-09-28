@@ -24,7 +24,7 @@
 
     nixosModules = import ./nixosModules args;
 
-    nixdOptions = mylib.modules;
+    nixdOptions = mylib.modules; # my own field for completion in nixd, used in .neoconf.json
 
     formatter = mylib.forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
   };
