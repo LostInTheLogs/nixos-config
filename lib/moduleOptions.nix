@@ -1,3 +1,4 @@
+# this module is used for lsp completion of options form my nixos and home-manager modules
 {
   lib,
   inputs,

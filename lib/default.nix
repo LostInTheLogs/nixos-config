@@ -26,5 +26,5 @@ in {
     };
 
   fs = import ./fs.nix args;
-  modules = import ./modules.nix args;
+  moduleOptions = import ./moduleOptions.nix args;
 }
