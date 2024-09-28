@@ -7,8 +7,13 @@
     (lib.evalModules {
       modules =
         (import "${inputs.nixpkgs}/nixos/modules/module-list.nix")
-        ++ [{nixpkgs.hostPlatform = "x86_64-linux";} (import ../nixosModules args).default];
+        ++ [
+          {nixpkgs.hostPlatform = "x86_64-linux";}
+          (inputs.home-manager.nixosModules.home-manager)
+          (import ../nixosModules args).default
+        ];
       class = "nixos";
+      specialArgs = {inherit inputs;};
     })
     .options;
 
@@ -26,6 +31,7 @@
           */
         ];
       class = "homeManager";
+      specialArgs = {inherit inputs;};
     })
     .options;
 }

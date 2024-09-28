@@ -15,6 +15,12 @@ in {
   options.my.profiles.workstation.enable = lib.mkEnableOption "the workstation profile";
 
   config = lib.mkIf cfg.enable {
+    my.users = {
+      enable = true;
+      users.lost.enable = true;
+      home-manager.enable = true;
+    };
+
     services.earlyoom = {
       enable = true;
       enableNotifications = true;
