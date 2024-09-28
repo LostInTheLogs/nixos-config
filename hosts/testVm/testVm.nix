@@ -1,9 +1,4 @@
-{
-  inputs,
-  pkgs,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   my.profiles.testVm.enable = true;
   my.profiles.workstation.enable = true;
   # users.users.lost = {

@@ -3,7 +3,6 @@
   lib,
   mylib,
   config,
-  pkgs,
   ...
 }: let
   cfg = config.my.users;
