@@ -7,6 +7,16 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # ./homeManagerModules/programs/terminal/zsh.nix
+    fzf-tab = {
+      url = "github:Aloxaf/fzf-tab";
+      flake = false;
+    };
+    conda-zsh-completion = {
+      url = "github:conda-incubator/conda-zsh-completion";
+      flake = false;
+    };
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
@@ -23,6 +33,7 @@
     nixosConfigurations = import ./hosts args;
 
     nixosModules = import ./nixosModules args;
+    homeManagerModules = import ./homeManagerModules args;
 
     moduleOptions = mylib.moduleOptions; # my own field for completion in nixd, used in .neoconf.json
 

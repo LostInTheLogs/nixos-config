@@ -1,5 +1,37 @@
 {
   "nodes": {
+    "conda-zsh-completion": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1719828186,
+        "narHash": "sha256-lphlOmdy8pHSNzupSnuE9KvLT303UEbVRGcHsxwakIU=",
+        "owner": "conda-incubator",
+        "repo": "conda-zsh-completion",
+        "rev": "5b233f57b0405e8e1dc34837896a7649fd416342",
+        "type": "github"
+      },
+      "original": {
+        "owner": "conda-incubator",
+        "repo": "conda-zsh-completion",
+        "type": "github"
+      }
+    },
+    "fzf-tab": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1727262751,
+        "narHash": "sha256-IA7JoauKkNOMETUTH4ekKIZWgwmGuEfu2ZN7BKhCXSA=",
+        "owner": "Aloxaf",
+        "repo": "fzf-tab",
+        "rev": "cf57116eb2410139b8bd78fcb793dd84db79e28f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Aloxaf",
+        "repo": "fzf-tab",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -38,6 +70,8 @@
     },
     "root": {
       "inputs": {
+        "conda-zsh-completion": "conda-zsh-completion",
+        "fzf-tab": "fzf-tab",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }
