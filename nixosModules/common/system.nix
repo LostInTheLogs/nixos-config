@@ -17,4 +17,6 @@
   # for easier rollbacks with nixos-enter in case we contain changes
   # that are not yet staged.
   environment.etc."flake".source = self;
+
+  services.tailscale.enable = true;
 }

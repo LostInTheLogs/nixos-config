@@ -8,6 +8,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     # ./homeManagerModules/programs/terminal/zsh.nix
     fzf-tab = {
       url = "github:Aloxaf/fzf-tab";
@@ -16,6 +18,12 @@
     conda-zsh-completion = {
       url = "github:conda-incubator/conda-zsh-completion";
       flake = false;
+    };
+
+    # ./hosts/Aether
+    legion-keyboard = {
+      url = "github:4JX/L5P-Keyboard-RGB";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
