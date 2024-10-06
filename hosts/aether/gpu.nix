@@ -2,8 +2,6 @@
   imports = with inputs.nixos-hardware.nixosModules; [
     common-gpu-amd
     common-gpu-nvidia
-    common-gpu-nvidia-ampere
-    common-gpu-nvidia-prime
   ];
 
   # √(2560² + 1600²) px / 16 in ≃ 189 dpi
