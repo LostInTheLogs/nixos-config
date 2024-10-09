@@ -9,6 +9,6 @@ in {
 
   config = lib.mkIf cfg.enable {
     # services.tlp.enable = true;
-    networking.wireless.enable = true;
+    # networking.wireless.enable = true;
   };
 }

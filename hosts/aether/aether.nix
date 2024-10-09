@@ -17,9 +17,8 @@
       common-pc-laptop-ssd
     ]);
 
-  environment.systemPackages = with pkgs; [lenovo-legion inputs.legion-keyboard.packages.wrapped];
-
-  shell.zsh.shellAliases = {
+  environment.systemPackages = with pkgs; [lenovo-legion inputs.legion-keyboard];
+  environment.shellAliases = {
     turn-off-keyboard = "${inputs.legion-keyboard}/bin/legion-kb-rgb set --effect Static -c 0,0,0,0,0,0,0,0,0,0,0,0";
   };
 
