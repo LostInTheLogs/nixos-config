@@ -24,7 +24,6 @@
   };
 
   my.profiles = {
-    testVm.enable = true;
     workstation.enable = true;
     development.enable = true;
     gaming.enable = true;
