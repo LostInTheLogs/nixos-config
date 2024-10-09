@@ -17,11 +17,11 @@
       common-pc-laptop-ssd
     ]);
 
-  environment.systemPackages = with pkgs; [lenovo-legion inputs.legion-keyboard];
+  environment.systemPackages = with pkgs; [lenovo-legion inputs.legion-keyboard.packages.wrapped];
 
-  # shell.zsh.shellAliases = {
-  #   turn-off-keyboard = "${inputs.legion-keyboard}/bin/legion-kb-rgb set --effect Static -c 0,0,0,0,0,0,0,0,0,0,0,0";
-  # };
+  shell.zsh.shellAliases = {
+    turn-off-keyboard = "${inputs.legion-keyboard}/bin/legion-kb-rgb set --effect Static -c 0,0,0,0,0,0,0,0,0,0,0,0";
+  };
 
   my.profiles = {
     testVm.enable = true;
