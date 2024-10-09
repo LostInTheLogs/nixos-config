@@ -28,10 +28,6 @@ in {
     systemd.extraConfig = timeoutConfig;
     systemd.user.extraConfig = timeoutConfig;
 
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
-    boot.loader.timeout = 2;
-
     services.flatpak.enable = true;
     xdg.portal.enable = true;
 

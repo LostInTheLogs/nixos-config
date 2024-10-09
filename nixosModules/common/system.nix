@@ -18,5 +18,12 @@
   # that are not yet staged.
   environment.etc."flake".source = inputs.self;
 
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    timeout = 2;
+  };
+
   services.tailscale.enable = true;
+  services.openssh.enable = true;
 }
