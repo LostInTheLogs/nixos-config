@@ -68,13 +68,13 @@
       extra-experimental-features = [
         "flakes" # flakes
         "nix-command" # experimental nix commands
-        # "recursive-nix" # let nix invoke itself
-        # "ca-derivations" # content addressed nix
-        # "auto-allocate-uids" # allow nix to automatically pick UIDs, rather than creating nixbld* user accounts
-        # "cgroups" # allow nix to execute builds inside cgroups
-        # "repl-flake" # allow passing installables to nix repl
-        # "no-url-literals" # disallow deprecated url-literals, i.e., URLs without quotation
-        # "dynamic-derivations" # allow "text hashing" derivation outputs, so we can build .drv files.
+        "recursive-nix" # let nix invoke itself
+        "ca-derivations" # content addressed nix
+        "auto-allocate-uids" # allow nix to automatically pick UIDs, rather than creating nixbld* user accounts
+        "cgroups" # allow nix to execute builds inside cgroups
+        "repl-flake" # allow passing installables to nix repl
+        "no-url-literals" # disallow deprecated url-literals, i.e., URLs without quotation
+        "dynamic-derivations" # allow "text hashing" derivation outputs, so we can build .drv files.
 
         # Those don't actually exist on Lix so they have to be disabled
         # configurable-impure-env" # allow impure environments
