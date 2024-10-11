@@ -5,19 +5,18 @@
     package = pkgs.lix;
 
     # Collect garbage
-    # gc = {
-    #   automatic = true;
-    #   dates = "Sat *-*-* 03:00";
-    #   options = "--delete-older-than 30d";
-    #   persistent = false; # don't try to catch up on missed GC runs
-    # };
+    gc = {
+      automatic = true;
+      dates = "Sat *-*-* 03:00";
+      options = "--delete-older-than 30d";
+      persistent = false; # don't try to catch up on missed GC runs
+    };
 
-    # Automatically optimize nix store my removing hard links
-    # do it after the gc.
-    # optimise = {
-    #   automatic = true;
-    #   dates = ["04:00"];
-    # };
+    # Automatically optimize nix store, do it after the gc.
+    optimise = {
+      automatic = true;
+      dates = ["04:00"];
+    };
 
     settings = {
       # Tell nix to use the xdg spec for base directories
