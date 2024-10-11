@@ -35,6 +35,8 @@
     PATH = [
       "${XDG_BIN_HOME}"
     ];
+
+    EDITOR = "nvim";
   };
 
   services.tailscale.enable = true;
