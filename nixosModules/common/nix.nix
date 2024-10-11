@@ -59,7 +59,7 @@
       # Show more logs when a build fails and decides to display
       # a bunch of lines. `nix log` would normally provide more
       # information, but this may save us some time and keystrokes.
-      log-lines = 30;
+      log-lines = 90;
 
       # Extra features of Nix that are considered unstable
       # and experimental. By default we should always include
