@@ -2,6 +2,7 @@
   inputs,
   lib,
   pkgs,
+  config,
   ...
 }: {
   imports =
@@ -38,7 +39,8 @@
     STOP_CHARGE_THRESH_BAT0 = 1; # conservation mode on, legions don't support custom thresholds
   };
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  boot.kernelPackages = pkgs.unstable.linuxPackages_xanmod_latest;
+#  hardware.nvidia.package = pkgs.unstable.linuxPackages_xanmod_stable.nvidiaPackages.stable;
 
   system.stateVersion = "24.05";
 }

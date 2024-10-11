@@ -1,5 +1,5 @@
 # https://github.com/NotAShelf/nyx/blob/d407b4d6e5ab7f60350af61a3d73a62a5e9ac660/modules/core/common/system/nix/module.nix
-{pkgs, ...}: {
+{inputs, pkgs, ...}: {
   nix = {
     # Lix, the higher performance Nix fork.
     package = pkgs.lix;
@@ -171,6 +171,10 @@
       # with maintainers, so it's disabled for the time being.
       showDerivationWarnings = [];
     };
+
+    overlays = [
+      inputs.self.outputs.overlays.unstable
+    ];
   };
 
   # By default nix-gc makes no effort to respect battery life by avoiding

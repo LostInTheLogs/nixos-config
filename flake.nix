@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,7 +24,7 @@
     # ./hosts/Aether
     legion-keyboard = {
       url = "github:4JX/L5P-Keyboard-RGB";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
@@ -44,6 +45,15 @@
     homeManagerModules = import ./homeManagerModules args;
 
     moduleOptions = mylib.moduleOptions; # my own field for completion in nixd, used in .neoconf.json
+
+    overlays = {
+      unstable = final: prev: {
+        unstable = import inputs.nixpkgs-unstable {
+	  system = prev.stdenv.hostPlatform.system;
+	  config.allowUnfree = true;
+	};
+      };
+    };
 
     formatter = mylib.forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
   };
