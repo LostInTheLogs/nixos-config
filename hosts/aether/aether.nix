@@ -8,7 +8,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./gpu.nix
+      # ./gpu.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-amd

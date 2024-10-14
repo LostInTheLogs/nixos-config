@@ -1,7 +1,8 @@
 {inputs, config, lib, ...}: {
   imports = with inputs.nixos-hardware.nixosModules; 
-    [ common-gpu-amd
-      common-gpu-nvidia 
+    [ 
+      # common-gpu-amd
+      # common-gpu-nvidia 
     ];
 
   # √(2560² + 1600²) px / 16 in ≃ 189 dpi
@@ -26,7 +27,7 @@
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = true;
+    powerManagement.finegrained = false;
 
     # Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver). Support is limited
@@ -52,7 +53,7 @@
 
   # # Still needs to load at some point if we want X11 to work
   # boot.kernelModules = ["amdgpu"];
-  # hardware = { amdgpu.initrd.enable = false;
+  # hardware.amdgpu.initrd.enable = false;
 
   specialisation = {
     # This specialisation is for the case where "DDG" (Dual-Direct GFX, A
