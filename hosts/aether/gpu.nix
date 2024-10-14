@@ -1,4 +1,4 @@
-{config}: {
+{config, ...}: {
   # √(2560² + 1600²) px / 16 in ≃ 189 dpi
   services.xserver.dpi = 189;
 
