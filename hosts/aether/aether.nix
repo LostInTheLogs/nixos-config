@@ -42,5 +42,7 @@
   boot.kernelPackages = pkgs.unstable.linuxPackages_xanmod_latest;
 #  hardware.nvidia.package = pkgs.unstable.linuxPackages_xanmod_stable.nvidiaPackages.stable;
 
+  time.hardwareClockInLocalTime = true; #  dual boot :/
+  
   system.stateVersion = "24.05";
 }
