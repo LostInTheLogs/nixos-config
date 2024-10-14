@@ -36,5 +36,7 @@
 
   time.hardwareClockInLocalTime = true; #  dual boot :/
 
+  networking.networkmanager.wifi.powersave = false;
+
   system.stateVersion = "24.05";
 }
