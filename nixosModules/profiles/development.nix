@@ -11,7 +11,7 @@ in {
   config = lib.mkIf cfg.enable {
     fonts.fonts = with pkgs; [fira-code-nerdfont];
 
-    environment.systemPackages = with pkgs; [alejandra nixd];
+    environment.systemPackages = with pkgs; [alejandra nixd xclip];
     # sth
   };
 }
