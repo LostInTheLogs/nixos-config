@@ -23,7 +23,6 @@
     systemd-boot.configurationLimit = 5;
     efi.canTouchEfiVariables = true;
     timeout = 2;
-
   };
 
   environment.sessionVariables = rec {
@@ -45,5 +44,4 @@
   services.openssh.enable = true;
 
   services.automatic-timezoned.enable = true;
-
 }
