@@ -44,4 +44,6 @@
   services.openssh.enable = true;
 
   services.automatic-timezoned.enable = true;
+
+  programs.nix-ld.enable = true;
 }

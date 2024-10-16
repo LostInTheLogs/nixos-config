@@ -16,8 +16,10 @@ in {
 
       alejandra
       nixd
-
       gcc
+      nodejs
+      lua
+      sumneko-lua-language-server
     ];
     # sth
   };
