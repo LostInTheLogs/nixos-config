@@ -19,7 +19,7 @@ in {
       gcc
       nodejs
       lua
-      sumneko-lua-language-server
+      lua-language-server
     ];
     # sth
   };
