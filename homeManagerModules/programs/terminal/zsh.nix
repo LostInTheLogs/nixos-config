@@ -33,6 +33,10 @@
         "zoxide"
       ];
     };
+    initExtra = ''
+      setopt nobeep autocd globdots extendedglob nomatch menucomplete interactive_comments
+      bindkey '^H' backward-kill-word #CTRL+BACKSPACE
+    '';
     plugins = [
       rec {
         name = "zsh-autosuggestions";
