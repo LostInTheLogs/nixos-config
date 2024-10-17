@@ -32,6 +32,8 @@
 
   my.users.users.lost.enable = true;
 
+  my.kanata.enable = true;
+
   boot.kernelPackages = pkgs.unstable.linuxPackages_6_10; # 6.11 breaks nvidia
 
   time.hardwareClockInLocalTime = true; #  dual boot :/
