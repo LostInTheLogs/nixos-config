@@ -15,6 +15,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    syntaxHighlighting.enable = true;
     history.path = "$XDG_STATE_HOME/zsh/history";
     dotDir = ".config/zsh";
     shellAliases = {
@@ -38,7 +39,7 @@
           src = pkgs.${name};
         }) [
           "zsh-autosuggestions"
-          "zsh-syntax-highlighting"
+          # "zsh-syntax-highlighting"
           "nix-zsh-completions"
         ])
       ++ [
