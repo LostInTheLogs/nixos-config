@@ -33,25 +33,26 @@
         "zoxide"
       ];
     };
-    plugins =
-      (builtins.map (name: {
-          name = name;
-          src = pkgs.${name};
-        }) [
-          "zsh-autosuggestions"
-          # "zsh-syntax-highlighting"
-          "nix-zsh-completions"
-        ])
-      ++ [
-        {
-          name = "fzf-tab";
-          src = inputs.fzf-tab;
-        }
-        {
-          name = "conda-zsh-completion";
-          src = inputs.conda-zsh-completion;
-        }
-      ];
+    plugins = [
+      rec {
+        name = "zsh-autosuggestions";
+        src = pkgs.${name};
+        file = "share/${name}/${name}.zsh";
+      }
+      rec {
+        name = "nix-zsh-completions";
+        src = pkgs.${name};
+        file = "share/zsh/plugins/nix/${name}.plugin.zsh";
+      }
+      {
+        name = "fzf-tab";
+        src = inputs.fzf-tab;
+      }
+      {
+        name = "conda-zsh-completion";
+        src = inputs.conda-zsh-completion;
+      }
+    ];
   };
 
   programs.starship = {
