@@ -35,7 +35,7 @@ in {
 
             /(tap-hold $tt $ht / lctl)
             .(tap-hold $tt $ht . lmet)
-            l(tap-hold $tt $ht l lalt)
+            p(tap-hold $tt $ht p lalt)
             o(tap-hold $tt $ht o ralt)
           )
 
