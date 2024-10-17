@@ -15,7 +15,7 @@
   system.nixos.tags = ["nvidia-offload"];
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["amdgpu"];
+  services.xserver.videoDrivers = ["amdgpu" "nvidia"];
 
   # # Still needs to load at some point if we want X11 to work
   boot.kernelModules = ["amdgpu"];
@@ -63,29 +63,27 @@
 
   boot.kernelParams = ["nvidia-drm.modeset=1" "nvidia-drm.fbdev=1"];
 
-  # specialisation = {
-  #   no-nvidia.configuration = {
-  #     system.nixos.tags = ["no-nvidia"];
-  #
-  #     # hardware.amdgpu.initrd.enable = lib.mkForce true;
-  #     services.xserver.videoDrivers = lib.mkForce ["amdgpu"];
-  #
-  #     boot.extraModprobeConfig = ''
-  #       blacklist nouveau
-  #       options nouveau modeset=0
-  #     '';
-  #     services.udev.extraRules = ''
-  #       # Remove NVIDIA USB xHCI Host Controller devices, if present
-  #       ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c0330", ATTR{power/control}="auto", ATTR{remove}="1"
-  #       # Remove NVIDIA USB Type-C UCSI devices, if present
-  #       ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c8000", ATTR{power/control}="auto", ATTR{remove}="1"
-  #       # Remove NVIDIA Audio devices, if present
-  #       ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{power/control}="auto", ATTR{remove}="1"
-  #       # Remove NVIDIA VGA/3D controller devices
-  #       ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x03[0-9]*", ATTR{power/control}="auto", ATTR{remove}="1"
-  #     '';
-  #     boot.blacklistedKernelModules = ["nouveau" "nvidia" "nvidia_drm" "nvidia_modeset"];
-  #     # boot.kernelModules = lib.mkForce [];
-  #   };
-  # };
+  specialisation = {
+    AMD_GPU.configuration = {
+      system.nixos.tags = ["AMD_GPU"];
+
+      services.xserver.videoDrivers = lib.mkForce ["amdgpu"];
+
+      boot.extraModprobeConfig = ''
+        blacklist nouveau
+        options nouveau modeset=0
+      '';
+      services.udev.extraRules = ''
+        # Remove NVIDIA USB xHCI Host Controller devices, if present
+        ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c0330", ATTR{power/control}="auto", ATTR{remove}="1"
+        # Remove NVIDIA USB Type-C UCSI devices, if present
+        ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c8000", ATTR{power/control}="auto", ATTR{remove}="1"
+        # Remove NVIDIA Audio devices, if present
+        ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{power/control}="auto", ATTR{remove}="1"
+        # Remove NVIDIA VGA/3D controller devices
+        ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x03[0-9]*", ATTR{power/control}="auto", ATTR{remove}="1"
+      '';
+      boot.blacklistedKernelModules = ["nouveau" "nvidia" "nvidia_drm" "nvidia_modeset"];
+    };
+  };
 }
