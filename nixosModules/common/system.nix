@@ -46,4 +46,7 @@
   services.automatic-timezoned.enable = true;
 
   programs.nix-ld.enable = true;
+
+  services.xserver.xkb.layout = "pl";
+  console.keyMap = "pl";
 }
