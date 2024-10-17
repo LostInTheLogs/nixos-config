@@ -3,9 +3,9 @@
   config,
   ...
 }: let
-  cfg = config.kanata;
+  cfg = config.my.kanata;
 in {
-  options.kanata.enable = lib.mkEnableOption "kanata";
+  options.my.kanata.enable = lib.mkEnableOption "kanata";
 
   config = lib.mkIf cfg.enable {
     services.kanata = {
