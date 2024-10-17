@@ -19,7 +19,7 @@
 
   # # Still needs to load at some point if we want X11 to work
   boot.kernelModules = ["amdgpu"];
-  hardware.amdgpu.initrd.enable = false;
+  hardware.amdgpu.initrd.enable = true;
 
   hardware.nvidia = {
     # Modesetting is required.
