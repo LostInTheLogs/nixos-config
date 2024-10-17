@@ -126,6 +126,7 @@
         "$shell"
         "$character"
       ];
+      #  [lost@aether🌐] 󰣀  nixos-config  main 
       right_format = "$cmd_duration";
       username = {
         show_always = true;
@@ -134,7 +135,8 @@
       };
       hostname = {
         ssh_only = false;
-        format = "[@](bold bright-blue)[$ssh_symbol$hostname]($style)[\\]](bold bright-blue) ";
+        ssh_symbol = "  ";
+        format = "[@](bold bright-blue)[$hostname]($style)[\\]](bold bright-blue)[$ssh_symbol](bright-blue) ";
         style = "bold blue";
       };
       git_branch = {
