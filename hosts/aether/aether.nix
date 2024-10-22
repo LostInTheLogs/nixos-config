@@ -33,6 +33,7 @@
   my.users.users.lost.enable = true;
 
   my.kanata.enable = true;
+  my.syncthing.enable = true;
 
   boot.kernelPackages = pkgs.unstable.linuxPackages_6_10; # 6.11 breaks nvidia
 
