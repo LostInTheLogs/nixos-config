@@ -20,6 +20,8 @@ in {
       home-manager.enable = true;
     };
 
+    programs.firefox.enable = true;
+
     services.earlyoom = {
       enable = true;
       enableNotifications = true;
