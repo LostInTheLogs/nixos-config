@@ -34,6 +34,11 @@
 
   my.kanata.enable = true;
   my.syncthing.enable = true;
+  services.syncthing = {
+    user = "lost";
+    dataDir = "/home/lost/Documents"; # Default folder for new synced folders
+    configDir = "/home/lost/.config/syncthing"; # Folder for Syncthing's settings and keys
+  };
 
   boot.kernelPackages = pkgs.unstable.linuxPackages_6_10; # 6.11 breaks nvidia
 
