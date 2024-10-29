@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: let
   cfg = config.my.profiles.workstation;
@@ -38,6 +39,7 @@ in {
     services.desktopManager.plasma6.enable = true;
     services.displayManager.sddm.wayland.enable = true;
     services.displayManager.defaultSession = "plasmax11";
+    environment.systemPackages = with pkgs; [kdePackages.plasma-pa];
 
     hardware.enableAllFirmware = true;
   };
