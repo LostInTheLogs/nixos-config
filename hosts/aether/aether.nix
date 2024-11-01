@@ -23,6 +23,11 @@
   environment.shellAliases = {
     turn-off-keyboard = "sudo ${inputs.legion-keyboard.packages.x86_64-linux.default}/bin/legion-kb-rgb set --effect Static -c 0,0,0,0,0,0,0,0,0,0,0,0";
   };
+  systemd.services.turn-off-keyboard = {
+    script = "${inputs.legion-keyboard.packages.x86_64-linux.default}/bin/legion-kb-rgb set --effect Static -c 0,0,0,0,0,0,0,0,0,0,0,0";
+    wantedBy = ["multi-user.target"];
+    serviceConfig = {Type = "oneshot";};
+  };
 
   my.profiles = {
     workstation.enable = true;
@@ -42,7 +47,7 @@
 
   boot.kernelPackages = pkgs.unstable.linuxPackages_6_10; # 6.11 breaks nvidia
 
-  time.hardwareClockInLocalTime = true; #  dual boot :/
+  time.hardwareClockInLocalTime = true; #  dual booting windows :/
 
   networking.networkmanager.wifi.powersave = false;
 
