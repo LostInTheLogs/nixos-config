@@ -9,6 +9,7 @@
     [
       ./hardware-configuration.nix
       ./gpu.nix
+      ./kanata.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-amd
@@ -32,7 +33,6 @@
 
   my.users.users.lost.enable = true;
 
-  my.kanata.enable = true;
   my.syncthing.enable = true;
   services.syncthing = {
     user = "lost";
