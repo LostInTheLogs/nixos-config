@@ -23,21 +23,59 @@
         )
 
         (deflayermap (base)
-          z (thold! z lctl)
-          x (thold! x lmet)
-          q (thold! q lalt)
-          w (thold! w ralt)
+          z (t! thold z lctl)
+          x (t! thold x lmet)
+          q (t! thold q lalt)
+          w (t! thold w ralt)
 
-          / (thold! / lctl)
-          . (thold! . lmet)
-          p (thold! p lalt)
-          o (thold! o ralt)
+          / (t! thold / lctl)
+          . (t! thold . lmet)
+          p (t! thold p lalt)
+          o (t! thold o ralt)
 
-          spc (!thold spc (layer-while-held symbols) )
+          caps tab
+          tab esc
+
+          spc (t! thold spc (layer-while-held symbols) )
         )
 
         (deflayermap (symbols)
-          s \(
+          q S-1
+          w S-2
+          e S-3
+          r S-4
+          t S-5
+
+          y S-6
+          u S-7
+          i S-8
+          o S-9
+          p S-0
+
+          a S-[
+          s S-9
+          d S-0
+          f S-[
+          g =
+
+          h grv
+          j S-'
+          k '
+          l S--
+          ; \
+
+          z S-grv
+          x [
+          c ]
+          v -
+          b S-=
+
+          n S-\
+          m m
+          , S-,
+          . S-.
+          / \
+
         )
       '';
     };
