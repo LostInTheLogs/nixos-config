@@ -4,11 +4,6 @@
 nix run ".#nixosConfigurations.testVm.config.system.build.customVm"
 ```
 
-# Folder structure
-
-- `nixosModules/`
-  - ``
-
 # Credits
 
 ## Special thanks
@@ -17,10 +12,6 @@ nix run ".#nixosConfigurations.testVm.config.system.build.customVm"
 
 ## Other resources
 
-- [jecaro/simple-nix-vm](https://github.com/jecaro/simple-nix-vm),
-  [tobiasBora's nixos discourse](https://discourse.nixos.org/t/get-qemu-guest-integration-when-running-nixos-rebuild-build-vm/22621),
-  [spice's manual](https://www.spice-space.org/spice-user-manual.html#agent) - clipboard sharing in the test vm
-
 Configs I read through and **tried** to understand before writing this config:
 
 - [hlissner/dotfiles](https://github.com/hlissner/dotfiles)
@@ -28,6 +19,10 @@ Configs I read through and **tried** to understand before writing this config:
 - [Misterio77/nix-starter-configs](https://github.com/Misterio77/nix-starter-configs)
 - [Misterio77/nix-config](https://github.com/Misterio77/nix-config)
 - [EdenEast/nyx](https://github.com/EdenEast/nyx/blob/3c22dbe5a033c95292e4f5e98c132e85f7b8af23/lib/default.nix)
+
+- [jecaro/simple-nix-vm](https://github.com/jecaro/simple-nix-vm),
+  [tobiasBora's nixos discourse](https://discourse.nixos.org/t/get-qemu-guest-integration-when-running-nixos-rebuild-build-vm/22621),
+  [spice's manual](https://www.spice-space.org/spice-user-manual.html#agent) - clipboard sharing in the test vm
 
 ## Official manuals
 
