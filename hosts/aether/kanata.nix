@@ -49,7 +49,7 @@
           y S-6
           u S-7
           i S-8
-          o S-9
+          o bspc
           p S-0
 
           a S-[
