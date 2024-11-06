@@ -49,7 +49,7 @@
 
   time.hardwareClockInLocalTime = true; #  dual booting windows :/
 
-  networking.networkmanager.wifi.powersave = false;
+  # networking.networkmanager.wifi.powersave = false;
 
   system.stateVersion = "24.05";
 }
