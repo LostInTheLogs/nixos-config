@@ -11,6 +11,7 @@
       brave
       obsidian
       teams-for-linux
+      pdfarranger
     ];
 
     systemd.user.sessionVariables = {
