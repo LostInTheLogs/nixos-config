@@ -55,7 +55,7 @@
           a S-[
           s S-9
           d S-0
-          f S-[
+          f S-]
           g =
 
           h grv
