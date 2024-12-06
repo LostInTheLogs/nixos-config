@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: let
   cfg = config.my.profiles.laptop;
@@ -12,5 +13,7 @@ in {
     # networking.wireless.enable = true;
     hardware.bluetooth.enable = true; # enables support for Bluetooth
     hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
+    environment.systemPackages = with pkgs; [barrier];
   };
 }
