@@ -19,7 +19,7 @@
       common-pc-laptop-ssd
     ]);
 
-  environment.systemPackages = with pkgs; [lenovo-legion inputs.legion-keyboard.packages.x86_64-linux.default];
+  environment.systemPackages = with pkgs; [lenovo-legion];
   environment.shellAliases = {
     turn-off-keyboard = "sudo ${inputs.legion-keyboard.packages.x86_64-linux.default}/bin/legion-kb-rgb set --effect Static -c 0,0,0,0,0,0,0,0,0,0,0,0";
   };
@@ -45,7 +45,7 @@
     configDir = "/home/lost/.config/syncthing"; # Folder for Syncthing's settings and keys
   };
 
-  boot.kernelPackages = pkgs.unstable.linuxPackages_6_10; # 6.11 breaks nvidia
+  # boot.kernelPackages = pkgs.unstable.linuxPackages_6_10; # 6.11 breaks nvidia
 
   time.hardwareClockInLocalTime = true; #  dual booting windows :/
 

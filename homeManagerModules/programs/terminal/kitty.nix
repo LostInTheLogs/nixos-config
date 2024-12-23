@@ -1,7 +1,7 @@
 {...}: {
   programs.kitty = {
     enable = true;
-    theme = "Gruvbox Dark Hard";
+    themeFile = "gruvbox-dark-hard";
     settings = {
       font_size = "10.5";
       disable_ligatures = "cursor";

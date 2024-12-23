@@ -1,5 +1,5 @@
 {lib, ...}: let
-  inherit (lib) pipe flatten mapAttrsFlatten filter filterAttrs hasSuffix;
+  inherit (lib) pipe flatten mapAttrsToList filter filterAttrs hasSuffix;
   inherit (builtins) readDir attrNames;
 in rec {
   getDirs = dir:
@@ -11,7 +11,7 @@ in rec {
 
   getFilesRec = dir:
     flatten (
-      mapAttrsFlatten
+      mapAttrsToList
       (file: type:
         if type == "directory"
         then getFilesRec /.${dir}/${file}

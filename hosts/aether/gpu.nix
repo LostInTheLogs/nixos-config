@@ -8,10 +8,9 @@
       # √(2560² + 1600²) px / 16 in ≃ 189 dpi
       services.xserver.dpi = 189;
 
-      hardware.opengl = {
+      hardware.graphics = {
         enable = true;
-        driSupport = true;
-        driSupport32Bit = true;
+        enable32Bit = true;
       };
 
       specialisation = {
