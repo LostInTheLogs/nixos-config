@@ -168,4 +168,5 @@
       };
     };
   };
+  programs.direnv.enable = true;
 }
