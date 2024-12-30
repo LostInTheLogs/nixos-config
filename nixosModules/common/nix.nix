@@ -73,6 +73,7 @@
         "nix-command" # experimental nix commands
         "recursive-nix" # let nix invoke itself
         "ca-derivations" # content addressed nix
+        "impure-derivations" # __impure derivations
         "auto-allocate-uids" # allow nix to automatically pick UIDs, rather than creating nixbld* user accounts
         "cgroups" # allow nix to execute builds inside cgroups
         "repl-flake" # allow passing installables to nix repl
