@@ -6,7 +6,7 @@
 }: {
   nix = {
     # Lix, the higher performance Nix fork.
-    package = pkgs.lix;
+    # package = pkgs.lix;
 
     # Collect garbage
     gc = {
@@ -76,7 +76,7 @@
         "impure-derivations" # __impure derivations
         "auto-allocate-uids" # allow nix to automatically pick UIDs, rather than creating nixbld* user accounts
         "cgroups" # allow nix to execute builds inside cgroups
-        "repl-flake" # allow passing installables to nix repl
+        # "repl-flake" # lix only, allow passing installables to nix repl
         "no-url-literals" # disallow deprecated url-literals, i.e., URLs without quotation
         "dynamic-derivations" # allow "text hashing" derivation outputs, so we can build .drv files.
 
@@ -92,7 +92,7 @@
       pure-eval = false; # pain
 
       # Don't warn me that my git tree is dirty, I know.
-      warn-dirty = false;
+      # warn-dirty = false;
 
       # Maximum number of parallel TCP connections
       # used to fetch imports and binary caches.
