@@ -13,6 +13,7 @@ in {
 
     environment.systemPackages = with pkgs; [
       xclip
+      wl-clipboard
 
       alejandra
       nixd
