@@ -11,6 +11,7 @@
       obsidian
       teams-for-linux
       pdfarranger
+      vlc
     ];
 
     systemd.user.sessionVariables = {
