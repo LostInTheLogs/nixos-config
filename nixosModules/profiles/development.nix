@@ -14,6 +14,7 @@ in {
     environment.systemPackages = with pkgs; [
       xclip
       wl-clipboard
+      trashy
 
       alejandra
       nixd
