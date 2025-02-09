@@ -12,6 +12,8 @@
       teams-for-linux
       pdfarranger
       vlc
+
+      josm
     ];
 
     systemd.user.sessionVariables = {
