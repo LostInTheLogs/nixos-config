@@ -13,7 +13,7 @@
       pdfarranger
       vlc
 
-      josm
+      unstable.josm
     ];
 
     systemd.user.sessionVariables = {
