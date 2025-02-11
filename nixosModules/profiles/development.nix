@@ -16,13 +16,12 @@ in {
       wl-clipboard
       trashy
 
-      alejandra
-      nixd
-      gcc
-      nodejs
-      lua
-      lua-language-server
+      # alejandra
+      # nixd
+      # gcc
+      # nodejs
+      # lua
+      # lua-language-server
     ];
-    # sth
   };
 }
