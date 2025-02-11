@@ -14,6 +14,7 @@
       vlc
 
       unstable.josm
+      inkscape
     ];
 
     systemd.user.sessionVariables = {
