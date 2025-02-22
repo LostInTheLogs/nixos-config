@@ -132,7 +132,6 @@
         "$shell"
         "$character"
       ];
-      #  [lost@aether🌐] 󰣀  nixos-config  main 
       right_format = "$cmd_duration";
       username = {
         show_always = true;

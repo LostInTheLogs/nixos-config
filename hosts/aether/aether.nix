@@ -38,8 +38,8 @@
 
   my.users.users.lost.enable = true;
 
-  my.syncthing.enable = true;
   services.syncthing = {
+    enable = true;
     user = "lost";
     dataDir = "/home/lost/Documents"; # Default folder for new synced folders
     configDir = "/home/lost/.config/syncthing"; # Folder for Syncthing's settings and keys
