@@ -16,7 +16,12 @@
       common-pc-ssd
     ]);
 
-  hardware.nvidia.open = true;
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    powerManagement.finegrained = false;
+    open = false;
+  };
 
   my.profiles = {
     workstation.enable = true;
