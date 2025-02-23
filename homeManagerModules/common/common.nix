@@ -12,6 +12,6 @@
     html.enable = false;
     json.enable = false;
   };
-  nixpkgs.overlays = [];
+  # nixpkgs.overlays = [];
   systemd.user.startServices = "sd-switch";
 }

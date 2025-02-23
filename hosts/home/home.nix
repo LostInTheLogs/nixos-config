@@ -16,21 +16,30 @@
       common-pc-ssd
     ]);
 
- hardware.nvidia.open = true;
+  hardware.nvidia.open = true;
 
   my.profiles = {
     workstation.enable = true;
     development.enable = true;
-#   gaming.enable = true;
+    gaming.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [protonvpn-gui];
 
   my.users.users.lost.enable = true;
 
   services.syncthing = {
-    enable=true;
+    enable = true;
     user = "lost";
     dataDir = "/home/lost/Documents"; # Default folder for new synced folders
     configDir = "/home/lost/.config/syncthing"; # Folder for Syncthing's settings and keys
+  };
+
+  services.samba = {
+    enable = true;
+    package = pkgs.sambaFull;
+    openFirewall = true;
+    usershares.enable = true;
   };
 
   services.xserver.videoDrivers = ["nvidia"];

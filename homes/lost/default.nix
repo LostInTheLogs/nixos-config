@@ -1,9 +1,13 @@
-{config, ...}: {
+{
+  config,
+  osConfig,
+  ...
+}: {
   imports = [];
   home = {
     username = "lost";
     homeDirectory = "/home/${config.home.username}";
-    stateVersion = "24.05";
+    stateVersion = osConfig.system.stateVersion;
     sessionPath = ["$HOME/.local/bin"];
   };
 }

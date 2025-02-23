@@ -2,10 +2,12 @@
   description = "TODO";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.11";
+    # nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      # url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -37,6 +39,7 @@
     };
     mylib = import ./lib args;
   in {
+    # TODO: flake parts
     lib = mylib;
 
     nixosConfigurations = import ./hosts args;
@@ -54,6 +57,13 @@
         };
       };
     };
+    devShells = mylib.forAllSystems (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        default = pkgs.mkShell {packages = with pkgs; [alejandra nixd];};
+      }
+    );
 
     formatter = mylib.forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
   };

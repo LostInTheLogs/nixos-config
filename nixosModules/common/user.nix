@@ -44,6 +44,7 @@ in {
             "podman"
             "git"
             "libvirtd"
+            "samba"
           ];
         };
       })
