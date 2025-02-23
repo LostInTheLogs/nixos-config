@@ -44,6 +44,7 @@
   services.openssh.enable = true;
 
   services.automatic-timezoned.enable = true;
+  services.geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
 
   programs.nix-ld.enable = true;
 
