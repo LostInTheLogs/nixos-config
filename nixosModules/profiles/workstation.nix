@@ -39,7 +39,7 @@ in {
     services.desktopManager.plasma6.enable = true;
     services.displayManager.sddm.wayland.enable = true;
     services.displayManager.defaultSession = "plasmax11";
-    environment.systemPackages = with pkgs; [kdePackages.plasma-pa];
+    environment.systemPackages = with pkgs; [kdePackages.plasma-pa kdePackages.filelight kdePackages.partitionmanager];
 
     hardware.enableAllFirmware = true;
   };

@@ -11,6 +11,7 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       steam
+      steam-run
       # minecraft
       prismlauncher
       modrinth-app

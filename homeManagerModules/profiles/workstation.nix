@@ -15,6 +15,9 @@
 
       unstable.josm
       inkscape
+      kdePackages.kdenlive
+      yt-dlp
+      ffmpeg
     ];
 
     systemd.user.sessionVariables = {

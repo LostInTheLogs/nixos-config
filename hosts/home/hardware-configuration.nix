@@ -33,13 +33,25 @@
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/a658c3be-a440-4508-a573-3e6394d9432e";
     fsType = "btrfs";
-    options = ["subvol=nix" "compress-force=zstd:1"];
+    options = ["subvol=nix" "noatime" "compress-force=zstd:1"];
   };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/3A6A-1E2F";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022" "umask=0077"];
+  };
+
+  fileSystems."/mnt/HDD" = {
+    device = "/dev/disk/by-uuid/1963bae8-d353-4d7e-988e-2f3789ec5fb1";
+    fsType = "btrfs";
+    options = ["compress-force=zstd:1" "noauto" "x-systemd.mount-timeout=30" "x-systemd.automount" "x-systemd.idle-timeout=10min" "comment=x-gvfs-show"];
+  };
+
+  fileSystems."/mnt/SSD" = {
+    device = "/dev/disk/by-uuid/414ff771-ccec-409f-95c3-239a361ef9af";
+    fsType = "btrfs";
+    options = ["compress-force=zstd:1" "noatime" "comment=x-gvfs-show"];
   };
 
   swapDevices = [];

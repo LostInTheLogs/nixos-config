@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   system = {
     # Automatic/Unattended upgrades in general are one of the dumbest things you can set up
     # on virtually any Linux distribution. While NixOS would logically mitigate some of its
@@ -39,6 +43,8 @@
 
     EDITOR = "nvim";
   };
+
+  environment.systemPackages = with pkgs; [smartmontools];
 
   services.tailscale.enable = true;
   services.openssh.enable = true;
