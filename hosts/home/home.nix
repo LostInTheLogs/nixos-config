@@ -8,6 +8,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./nvidia.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-intel
