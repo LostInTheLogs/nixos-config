@@ -6,16 +6,22 @@
 }: {
   config = lib.mkIf osConfig.my.profiles.workstation.enable {
     home.packages = with pkgs; [
-      vesktop
       brave
+
+      vesktop
       obsidian
       teams-for-linux
+      josm
+
+      krita
+      gimp-with-plugins
+      inkscape
+      kdePackages.kdenlive
+      obs-studio
+
       pdfarranger
       vlc
 
-      unstable.josm
-      inkscape
-      kdePackages.kdenlive
       yt-dlp
       ffmpeg
     ];

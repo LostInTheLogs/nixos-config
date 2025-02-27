@@ -16,17 +16,11 @@
       common-pc-ssd
     ]);
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = true;
-    powerManagement.finegrained = false;
-    open = false;
-  };
-
   my.profiles = {
     workstation.enable = true;
     development.enable = true;
     gaming.enable = true;
+    music.enable = true;
   };
 
   environment.systemPackages = with pkgs; [protonvpn-gui];
@@ -46,6 +40,8 @@
     openFirewall = true;
     usershares.enable = true;
   };
+
+  # boot.kernelPackages = pkgs.unstable.linuxPackages_6_12; # 6.11 breaks nvidia
 
   services.xserver.videoDrivers = ["nvidia"];
 

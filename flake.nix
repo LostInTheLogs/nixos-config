@@ -28,6 +28,11 @@
       url = "github:4JX/L5P-Keyboard-RGB";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # music profile
+    musnix = {
+      url = "github:musnix/musnix";
+    };
   };
 
   outputs = {nixpkgs, ...} @ inputs: let

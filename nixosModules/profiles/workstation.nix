@@ -27,6 +27,7 @@ in {
       enable = true;
       enableNotifications = true;
     };
+    systemd.services.earlyoom.serviceConfig.User = "lost"; # TODO: remove https://github.com/NixOS/nixpkgs/pull/375649
 
     systemd.extraConfig = timeoutConfig;
     systemd.user.extraConfig = timeoutConfig;
@@ -40,6 +41,13 @@ in {
     services.displayManager.sddm.wayland.enable = true;
     services.displayManager.defaultSession = "plasmax11";
     environment.systemPackages = with pkgs; [kdePackages.plasma-pa kdePackages.filelight kdePackages.partitionmanager];
+
+    services.printing.enable = true;
+    services.avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
 
     hardware.enableAllFirmware = true;
   };
