@@ -16,14 +16,14 @@
       krita
       gimp-with-plugins
       inkscape
-      kdePackages.kdenlive
+      unstable.kdePackages.kdenlive
       obs-studio
 
       pdfarranger
       vlc
 
       yt-dlp
-      ffmpeg
+      ffmpeg-full
     ];
 
     systemd.user.sessionVariables = {

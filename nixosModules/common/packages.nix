@@ -1,3 +1,3 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [git pciutils];
+  environment.systemPackages = with pkgs; [git pciutils btop];
 }

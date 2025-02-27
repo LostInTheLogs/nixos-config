@@ -39,12 +39,8 @@
     enable = true;
     package = pkgs.sambaFull;
     openFirewall = true;
-    usershares.enable = true;
+    # usershares.enable = true; TODO: add on next release
   };
-
-  # boot.kernelPackages = pkgs.unstable.linuxPackages_6_12; # 6.11 breaks nvidia
-
-  services.xserver.videoDrivers = ["nvidia"];
 
   system.stateVersion = "24.11";
 }
