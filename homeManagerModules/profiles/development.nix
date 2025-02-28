@@ -9,6 +9,14 @@
       vscodium-fhs
       neovim
       nixd
+      alejandra
+
+      conda
+      (pkgs.python3.withPackages (python-pkgs:
+        with python-pkgs; [
+          conda
+          pip
+        ]))
     ];
   };
 }
