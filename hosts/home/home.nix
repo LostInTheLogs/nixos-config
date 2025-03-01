@@ -42,5 +42,7 @@
     # usershares.enable = true; TODO: add on next release
   };
 
+  zramSwap.enable = true;
+
   system.stateVersion = "24.11";
 }

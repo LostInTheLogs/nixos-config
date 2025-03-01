@@ -6,7 +6,7 @@
       font_size = "10.5";
       disable_ligatures = "cursor";
       cursor_blink_interval = 0;
-      paste_actions = "filter";
+      paste_actions = "confirm";
       window_padding_width = "0 0 0 0";
       confirm_window_close = 2;
       background_opacity = "0.92";
