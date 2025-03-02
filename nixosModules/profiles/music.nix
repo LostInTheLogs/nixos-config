@@ -2,6 +2,7 @@
   lib,
   config,
   inputs,
+  pkgs,
   ...
 }: let
   cfg = config.my.profiles.music;
@@ -16,5 +17,11 @@ in {
     musnix = {
       enable = true;
     };
+
+    environment.systemPackages = with pkgs; [
+      yabridge
+      yabridgectl
+      bottles
+    ];
   };
 }

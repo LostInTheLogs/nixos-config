@@ -9,9 +9,6 @@
       carla
       lsp-plugins
       calf
-      yabridge
-      yabridgectl
-      bottles
 
       gmetronome
     ];
