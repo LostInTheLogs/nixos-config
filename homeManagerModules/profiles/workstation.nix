@@ -17,9 +17,12 @@
       gimp-with-plugins
       inkscape
 
+      tenacity
       unstable.kdePackages.kdenlive
       ffmpeg-full
       yt-dlp
+      subtitleedit
+      unstable.aegisub
 
       obs-studio
 

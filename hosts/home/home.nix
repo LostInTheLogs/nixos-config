@@ -28,6 +28,8 @@
 
   my.users.users.lost.enable = true;
 
+  hardware.nvidia-container-toolkit.enable = true;
+
   services.syncthing = {
     enable = true;
     user = "lost";
