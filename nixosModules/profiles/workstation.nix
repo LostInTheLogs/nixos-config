@@ -21,6 +21,15 @@ in {
       home-manager.enable = true;
     };
 
+    environment.systemPackages = with pkgs; [kdePackages.plasma-pa kdePackages.filelight kdePackages.partitionmanager];
+
+    services.sunshine = {
+      enable = true;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
+
     programs.firefox.enable = true;
 
     services.earlyoom = {
@@ -41,7 +50,6 @@ in {
     services.desktopManager.plasma6.enable = true;
     services.displayManager.sddm.wayland.enable = true;
     services.displayManager.defaultSession = "plasmax11";
-    environment.systemPackages = with pkgs; [kdePackages.plasma-pa kdePackages.filelight kdePackages.partitionmanager];
 
     services.printing.enable = true;
     services.avahi = {
