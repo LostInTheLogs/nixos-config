@@ -184,6 +184,7 @@
 
     overlays = [
       inputs.self.outputs.overlays.unstable
+      inputs.self.outputs.overlays.my
     ];
   };
 

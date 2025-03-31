@@ -23,5 +23,20 @@ in {
       yabridgectl
       bottles
     ];
+
+    services.pipewire.extraConfig.pipewire."91-null-sinks" = {
+      "context.objects" = [
+        {
+          factory = "adapter";
+          args = {
+            "factory.name" = "support.null-audio-sink";
+            "node.name" = "NoNoiseMic";
+            "node.description" = "Virtual mix";
+            "media.class" = "Audio/Source/Virtual";
+            "audio.position" = "FL,FR";
+          };
+        }
+      ];
+    };
   };
 }

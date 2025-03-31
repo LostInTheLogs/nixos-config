@@ -61,6 +61,8 @@
           config.allowUnfree = true;
         };
       };
+
+      my = final: prev: {my = import ./pkgs {pkgs = prev;};};
     };
 
     devShells = mylib.forAllSystems (
@@ -69,6 +71,12 @@
       in {
         default = pkgs.mkShell {packages = with pkgs; [alejandra nixd];};
       }
+    );
+
+    packages = mylib.forAllSystems (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in (import ./pkgs (args // {inherit pkgs;}))
     );
 
     formatter = mylib.forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
