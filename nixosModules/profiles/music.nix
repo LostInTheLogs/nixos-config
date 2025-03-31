@@ -31,7 +31,7 @@ in {
           args = {
             "factory.name" = "support.null-audio-sink";
             "node.name" = "NoNoiseMic";
-            "node.description" = "Virtual mix";
+            "node.description" = "Virtual mic: NoNoiseMic";
             "media.class" = "Audio/Source/Virtual";
             "audio.position" = "FL,FR";
           };
