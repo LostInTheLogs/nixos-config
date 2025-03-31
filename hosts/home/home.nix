@@ -46,5 +46,16 @@
 
   zramSwap.enable = true;
 
+  # nix copy --to file:///mnt/SSD/nixcache <nix store path>
+  nix = {
+    settings = {
+      substituters = [
+        "file:///mnt/SSD/nixcache"
+      ];
+      trusted-public-keys = [
+      ];
+    };
+  };
+
   system.stateVersion = "24.11";
 }
