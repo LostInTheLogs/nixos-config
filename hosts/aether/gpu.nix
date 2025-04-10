@@ -8,11 +8,6 @@
       # √(2560² + 1600²) px / 16 in ≃ 189 dpi
       services.xserver.dpi = 189;
 
-      hardware.graphics = {
-        enable = true;
-        enable32Bit = true;
-      };
-
       specialisation = {
         NVIDIA_GPU.configuration = {
           system.nixos.tags = ["NVIDIA_GPU"];
