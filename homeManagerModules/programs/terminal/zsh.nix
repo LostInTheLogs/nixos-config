@@ -25,6 +25,9 @@
     };
     oh-my-zsh = {
       enable = true;
+      extraConfig = ''
+        DISABLE_MAGIC_FUNCTIONS=true
+      '';
       plugins = [
         "git"
         "fzf"
