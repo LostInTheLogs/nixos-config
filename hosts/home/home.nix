@@ -17,6 +17,11 @@
       common-pc-ssd
     ]);
 
+  services.displayManager = {
+    autoLogin.enable = true;
+    autoLogin.user = "lost";
+  };
+
   my.profiles = {
     workstation.enable = true;
     development.enable = true;
