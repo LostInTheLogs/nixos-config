@@ -26,6 +26,15 @@
       enable = true;
     };
   };
+  # alx-wol patch todo
+  # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_8;
+  # boot.kernelPatches ={
+  #   name = "rt";
+  #   patch = fetchurl {
+  #     url = "mirror://kernel/linux/kernel/projects/rt/${branch}/older/patch-${version}.patch.xz";
+  #     sha256 = "12c2qpifcgij7hilhd7xrnqaz04gqf41m93pmlm8cv4nxz58cy36";
+  #   };
+  # } ;
 
   my.profiles = {
     workstation.enable = true;
