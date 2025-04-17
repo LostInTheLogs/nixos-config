@@ -21,6 +21,11 @@
     autoLogin.enable = true;
     autoLogin.user = "lost";
   };
+  networking.interfaces.enp6s0 = {
+    wakeOnLan = {
+      enable = true;
+    };
+  };
 
   my.profiles = {
     workstation.enable = true;
