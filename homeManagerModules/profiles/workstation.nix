@@ -8,6 +8,8 @@
     home.packages = with pkgs; [
       brave
 
+      libreoffice
+
       vesktop
       obsidian
       teams-for-linux
