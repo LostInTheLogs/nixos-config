@@ -21,6 +21,7 @@
 
       tenacity
       unstable.kdePackages.kdenlive
+      losslesscut-bin
       ffmpeg-full
       yt-dlp
       subtitleedit
