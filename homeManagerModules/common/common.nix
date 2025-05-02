@@ -13,5 +13,10 @@
     json.enable = false;
   };
   # nixpkgs.overlays = [];
+
+  home.sessionVariables = {
+    PATH = "$HOME/.local/bin:$HOME/repos/scripts:$PATH";
+  };
+
   systemd.user.startServices = "sd-switch";
 }
