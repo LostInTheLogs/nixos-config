@@ -25,6 +25,7 @@ in {
           useUserPackages = true;
           useGlobalPkgs = true;
           extraSpecialArgs = {inherit inputs;};
+          backupFileExtension = "hm-bup";
           sharedModules = [
             inputs.self.homeManagerModules.default
             {

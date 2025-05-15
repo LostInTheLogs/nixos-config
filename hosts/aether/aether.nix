@@ -20,6 +20,7 @@
     ]);
 
   environment.systemPackages = with pkgs; [lenovo-legion];
+  boot.extraModulePackages = with config.boot.kernelPackages; [lenovo-legion-module];
   environment.shellAliases = {
     turn-off-keyboard = "sudo ${inputs.legion-keyboard.packages.x86_64-linux.default}/bin/legion-kb-rgb set --effect Static -c 0,0,0,0,0,0,0,0,0,0,0,0";
   };
