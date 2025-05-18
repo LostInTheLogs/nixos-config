@@ -8,15 +8,14 @@
     home.packages = with pkgs; [
       brave
 
-      libreoffice
-
       youtube-music
 
       vesktop
       discord
       obsidian
-      teams-for-linux
+      # teams-for-linux
       josm
+      unstable.deskflow
 
       krita
       gimp-with-plugins
@@ -27,11 +26,12 @@
       losslesscut-bin
       ffmpeg-full
       yt-dlp
-      subtitleedit
-      unstable.aegisub
+      # subtitleedit
+      # unstable.aegisub
 
       obs-studio
 
+      libreoffice
       pdfarranger
       vlc
     ];
