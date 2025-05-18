@@ -22,7 +22,7 @@
       inkscape
 
       tenacity
-      unstable.kdePackages.kdenlive
+      kdePackages.kdenlive
       losslesscut-bin
       ffmpeg-full
       yt-dlp
