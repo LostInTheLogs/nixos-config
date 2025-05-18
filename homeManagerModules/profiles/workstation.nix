@@ -10,7 +10,10 @@
 
       libreoffice
 
+      youtube-music
+
       vesktop
+      discord
       obsidian
       teams-for-linux
       josm
