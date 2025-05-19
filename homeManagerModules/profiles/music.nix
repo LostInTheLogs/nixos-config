@@ -10,7 +10,6 @@
       pkgs.my.carla
     ];
     text = ''
-      sudo ulimit -n 1000000
       PIPEWIRE_LATENCY="2048/48000" carla "$HOME/Documents/music/all.carxp"
     '';
   };
