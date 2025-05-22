@@ -12,14 +12,14 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-      version = "565.77";
-      sha256_64bit = "sha256-CnqnQsRrzzTXZpgkAtF7PbH9s7wbiTRNcM0SPByzFHw=";
-      sha256_aarch64 = lib.fakeHash;
-      openSha256 = "sha256-Fxo0t61KQDs71YA8u7arY+503wkAc1foaa51vi2Pl5I=";
-      settingsSha256 = "sha256-VUetj3LlOSz/LB+DDfMCN34uA4bNTTpjDrb6C6Iwukk=";
-      persistencedSha256 = lib.fakeHash;
-    };
+    # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+    #   version = "565.77";
+    #   sha256_64bit = "sha256-CnqnQsRrzzTXZpgkAtF7PbH9s7wbiTRNcM0SPByzFHw=";
+    #   sha256_aarch64 = lib.fakeHash;
+    #   openSha256 = "sha256-Fxo0t61KQDs71YA8u7arY+503wkAc1foaa51vi2Pl5I=";
+    #   settingsSha256 = "sha256-VUetj3LlOSz/LB+DDfMCN34uA4bNTTpjDrb6C6Iwukk=";
+    #   persistencedSha256 = lib.fakeHash;
+    # };
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = false;
