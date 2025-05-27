@@ -23,7 +23,7 @@
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = false;
-    open = false;
+    open = true;
   };
   environment.variables = {
     # Required to run the correct GBM backend for nvidia GPUs on wayland
