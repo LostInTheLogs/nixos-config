@@ -10,6 +10,7 @@
       neovim
       nixd
       alejandra
+      gh
 
       conda
       (pkgs.python3.withPackages (python-pkgs:
