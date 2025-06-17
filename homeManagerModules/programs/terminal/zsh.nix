@@ -36,7 +36,7 @@
         "zoxide"
       ];
     };
-    initExtra = ''
+    initContent = ''
       setopt nobeep autocd globdots extendedglob nomatch menucomplete interactive_comments
       bindkey '^H' backward-kill-word #CTRL+BACKSPACE
     '';

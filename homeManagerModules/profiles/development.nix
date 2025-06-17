@@ -12,6 +12,11 @@
       alejandra
       gh
 
+      # tmp
+      nodejs
+      gcc
+      unzip
+
       conda
       (pkgs.python3.withPackages (python-pkgs:
         with python-pkgs; [
