@@ -44,7 +44,7 @@
     EDITOR = "nvim";
   };
 
-  environment.systemPackages = with pkgs; [smartmontools];
+  environment.systemPackages = with pkgs; [smartmontools busybox comma];
 
   services.tailscale.enable = true;
   services.openssh.enable = true;

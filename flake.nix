@@ -33,6 +33,9 @@
     musnix = {
       url = "github:musnix/musnix";
     };
+
+    # desktop profile
+    dimland.url = "github:keifufu/dimland";
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
@@ -69,7 +72,7 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
-        default = pkgs.mkShell {packages = with pkgs; [alejandra nixd];};
+        default = pkgs.mkShell {packages = with pkgs; [alejandra nixd deadnix];};
       }
     );
 

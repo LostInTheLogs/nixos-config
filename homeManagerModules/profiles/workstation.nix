@@ -2,6 +2,7 @@
   pkgs,
   lib,
   osConfig,
+  inputs,
   ...
 }: let
   ai-krita = pkgs.writeShellApplication {
@@ -15,6 +16,9 @@
     '';
   };
 in {
+  imports = [
+    inputs.dimland.homeManagerModules.dimland
+  ];
   config = lib.mkIf osConfig.my.profiles.workstation.enable {
     home.packages = with pkgs; [
       brave
@@ -47,6 +51,8 @@ in {
       pdfarranger
       vlc
     ];
+
+    programs.dimland.enable = true;
 
     systemd.user.sessionVariables = {
       MOZ_USE_XINPUT2 = "1";

@@ -29,7 +29,7 @@ in {
           sharedModules = [
             inputs.self.homeManagerModules.default
             {
-              # Ensure that HM uses t he same Nix package as NixOS.
+              # Ensure that HM uses the same Nix package as NixOS.
               nix.package = lib.mkForce config.nix.package;
             }
           ];
