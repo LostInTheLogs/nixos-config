@@ -6,6 +6,8 @@
 }: {
   config = lib.mkIf osConfig.my.profiles.development.enable {
     home.packages = with pkgs; [
+      stow
+
       vscodium-fhs
       neovim
       nixd

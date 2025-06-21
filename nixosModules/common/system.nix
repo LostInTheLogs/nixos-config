@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    inputs.nix-index-database.nixosModules.nix-index
+  ];
+
   system = {
     # Automatic/Unattended upgrades in general are one of the dumbest things you can set up
     # on virtually any Linux distribution. While NixOS would logically mitigate some of its
@@ -29,22 +33,12 @@
     timeout = 2;
   };
 
-  environment.sessionVariables = rec {
-    XDG_CACHE_HOME = "$HOME/.cache";
-    XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_DATA_HOME = "$HOME/.local/share";
-    XDG_STATE_HOME = "$HOME/.local/state";
-
-    # Not officially in the specification
-    XDG_BIN_HOME = "$HOME/.local/bin";
-    PATH = [
-      "${XDG_BIN_HOME}"
-    ];
-
+  environment.sessionVariables = {
     EDITOR = "nvim";
   };
 
-  environment.systemPackages = with pkgs; [smartmontools busybox comma];
+  environment.systemPackages = with pkgs; [smartmontools busybox];
+  programs.nix-index-database.comma.enable = true;
 
   services.tailscale.enable = true;
   services.openssh.enable = true;

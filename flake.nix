@@ -11,6 +11,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # ./homeManagerModules/programs/terminal/zsh.nix
@@ -54,8 +57,6 @@
 
     nixosModules = import ./nixosModules args;
     homeManagerModules = import ./homeManagerModules args;
-
-    moduleOptions = mylib.moduleOptions; # my own field for completion in nixd, used in .neoconf.json
 
     overlays = {
       unstable = final: prev: {

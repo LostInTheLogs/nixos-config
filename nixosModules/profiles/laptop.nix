@@ -12,6 +12,6 @@ in {
     # services.tlp.enable = true;
     # networking.wireless.enable = true;
 
-    environment.systemPackages = with pkgs; [input-leap];
+    # environment.systemPackages = with pkgs; [input-leap];
   };
 }

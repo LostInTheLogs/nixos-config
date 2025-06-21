@@ -13,6 +13,7 @@
     json.enable = false;
   };
   # nixpkgs.overlays = [];
+  xdg.enable = true;
 
   home.sessionVariables = {
     PATH = "$HOME/.local/bin:$HOME/repos/scripts:$PATH";
