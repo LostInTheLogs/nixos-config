@@ -23,6 +23,9 @@
         )
 
         (deflayermap (base)
+          ;; 1 tap esc 2 taps switch, 3 taps base
+          esc (tap-dance $ht (esc (layer-switch regular) (layer-switch base)))
+
           z (t! thold z lctl)
           x (t! thold x lmet)
           q (t! thold q lalt)
@@ -37,6 +40,26 @@
           tab esc
 
           spc (t! thold spc (layer-while-held symbols) )
+        )
+
+        (deflayermap (regular)
+          ;; 1 tap esc 2 taps switch, 3 taps base
+          esc (tap-dance $ht (esc (layer-switch base) (layer-switch base)))
+
+          z z
+          x x
+          q q
+          w w
+
+          / /
+          . .
+          p p
+          o o
+
+          caps tab
+          tab esc
+
+          spc spc
         )
 
         (deflayermap (symbols)

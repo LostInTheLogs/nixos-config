@@ -21,7 +21,7 @@ in {
       home-manager.enable = true;
     };
 
-    environment.systemPackages = with pkgs; [kdePackages.plasma-pa kdePackages.filelight kdePackages.partitionmanager];
+    environment.systemPackages = with pkgs; [kdePackages.plasma-pa kdePackages.filelight kdePackages.partitionmanager protonvpn-gui];
 
     services.sunshine = {
       enable = true;

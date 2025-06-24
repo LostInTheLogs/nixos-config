@@ -43,7 +43,7 @@
     music.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [protonvpn-gui];
+  # environment.systemPackages = with pkgs; [];
 
   my.users.users.lost.enable = true;
 
