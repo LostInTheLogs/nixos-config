@@ -15,6 +15,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     history.path = "$XDG_STATE_HOME/zsh/history";
     dotDir = ".config/zsh";
@@ -41,16 +42,6 @@
       bindkey '^H' backward-kill-word #CTRL+BACKSPACE
     '';
     plugins = [
-      rec {
-        name = "zsh-autosuggestions";
-        src = pkgs.${name};
-        file = "share/${name}/${name}.zsh";
-      }
-      rec {
-        name = "nix-zsh-completions";
-        src = pkgs.${name};
-        file = "share/zsh/plugins/nix/${name}.plugin.zsh";
-      }
       {
         name = "fzf-tab";
         src = inputs.fzf-tab;
