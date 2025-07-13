@@ -45,7 +45,7 @@
   fileSystems."/mnt/HDD" = {
     device = "/dev/disk/by-uuid/1963bae8-d353-4d7e-988e-2f3789ec5fb1";
     fsType = "btrfs";
-    options = ["compress-force=zstd:1" "noauto" "x-systemd.mount-timeout=30" "x-systemd.automount" "x-systemd.idle-timeout=30min" "comment=x-gvfs-show"];
+    options = ["compress-force=zstd:1" "noauto" "x-systemd.mount-timeout=30" "x-systemd.automount" "x-systemd.idle-timeout=60min" "comment=x-gvfs-show"];
   };
 
   fileSystems."/mnt/SSD" = {
