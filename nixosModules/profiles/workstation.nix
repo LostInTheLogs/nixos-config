@@ -52,6 +52,17 @@ in {
     services.displayManager.defaultSession = "plasma";
 
     services.printing.enable = true;
+    services.printing.drivers = with pkgs; [
+      gutenprint
+      gutenprintBin
+      brgenml1lpr
+      brgenml1cupswrapper
+      pkgs.cnijfilter2
+      hplip
+      hplipWithPlugin # NIXPKGS_ALLOW_UNFREE=1 nix-shell -p hplipWithPlugin --run 'sudo -E hp-setup'
+      splix
+      brlaser
+    ];
     services.avahi = {
       enable = true;
       nssmdns4 = true;
