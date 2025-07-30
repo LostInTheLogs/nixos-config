@@ -5,15 +5,10 @@
   pkgs,
   ...
 }: let
-  my-wine = pkgs.unstable.wineWowPackages.yabridge;
   cfg = config.my.profiles.music;
-  wineShell = pkgs.writeShellApplication {
-    name = "yabridge-wine-shell";
-    runtimeInputs = [
-      my-wine
-    ];
-    text = "echo 'Yabridge wine shell'; exec $SHELL";
-  };
+  yabridge-wine = pkgs.writeShellScriptBin "yabridge-wine" ''
+    exec ${pkgs.wineWowPackages.yabridge}/bin/wine "$@"
+  '';
 in {
   imports = [
     inputs.musnix.nixosModules.musnix
@@ -27,9 +22,9 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
-      (yabridge.override {wine = my-wine;})
-      (yabridgectl.override {wine = my-wine;})
-      wineShell
+      yabridge
+      yabridgectl
+      yabridge-wine
       bottles
     ];
 

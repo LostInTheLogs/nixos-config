@@ -11,15 +11,14 @@
     # Collect garbage
     gc = {
       automatic = true;
-      dates = "Sat *-*-* 03:00";
+      dates = "Sat *-*-* 22:00";
       options = "--delete-older-than 30d";
-      persistent = false; # don't try to catch up on missed GC runs
     };
 
     # Automatically optimize nix store, do it after the gc.
     optimise = {
       automatic = true;
-      dates = ["04:00"];
+      dates = ["Sat *-*-* 22:30"];
     };
 
     settings = {
