@@ -8,17 +8,22 @@
   ];
 
   system = {
-    autoUpgrade = {
-      enable = true;
-      flags = [
-        "--update-input nixpkgs"
-        "--print-build-logs"
-        "-j 1"
-        "--cores 1"
-      ];
-      dates = "21:00";
-      randomizedDelaySec = "15min";
-    };
+    # TODO: <https://github.com/NixOS/nixpkgs/issues/349734>
+    # autoUpgrade = {
+    #   flake = "path:${inputs.self}";
+    #   enable = true;
+    #   flags = [
+    #     "-T-${inputs.self}"
+    #     "-D-${./.}"
+    #     "--update-input nixpkgs"
+    #     "--commit-lock-file"
+    #     "-L"
+    #     "-j 1"
+    #     "--cores 1"
+    #   ];
+    #   dates = "21:00";
+    #   randomizedDelaySec = "15min";
+    # };
 
     # Globally declare the configurationRevision from shortRev if the git tree is clean,
     # or from dirtyShortRev if it is dirty. This is useful for tracking the current
