@@ -26,10 +26,11 @@ in {
           with pkgs; [
             # Workaround xorg cursor issue
             kdePackages.breeze
-            gamemode
           ];
       };
     };
+
+    programs.gamemode.enable = true;
 
     environment.systemPackages = with pkgs; [
       # fixes cursor in steam
