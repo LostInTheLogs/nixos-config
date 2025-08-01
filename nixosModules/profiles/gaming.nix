@@ -26,6 +26,7 @@ in {
           with pkgs; [
             # Workaround xorg cursor issue
             kdePackages.breeze
+            gamemode
           ];
       };
     };
