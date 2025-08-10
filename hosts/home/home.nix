@@ -26,6 +26,7 @@
       enable = true;
     };
   };
+
   # alx-wol patch todo
   # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_8;
   # boot.kernelPatches ={
@@ -75,6 +76,9 @@
       ];
     };
   };
+
+  boot.kernelPackages = pkgs.linuxPackages_lqx;
+  musnix.soundcardPciId = "00:1f.3";
 
   system.stateVersion = "24.11";
 }

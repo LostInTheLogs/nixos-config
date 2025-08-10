@@ -7,7 +7,10 @@
   config = lib.mkIf osConfig.my.profiles.development.enable {
     home.packages = with pkgs; [
       stow
+      just
+      gnumake
 
+      zellij
       vscodium-fhs
       neovim
       nixd
@@ -16,6 +19,7 @@
 
       # tmp
       nodejs
+      pnpm
       gcc
       unzip
 
