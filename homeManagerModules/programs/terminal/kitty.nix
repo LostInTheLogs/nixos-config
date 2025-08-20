@@ -9,7 +9,7 @@
       paste_actions = "confirm";
       window_padding_width = "0 0 0 0";
       confirm_window_close = 2;
-      background_opacity = "0.92";
+      background_opacity = "0.93";
       dynamic_background_opacity = true;
     };
   };
@@ -19,5 +19,8 @@
     "ctrl+plus" = "change_font_size all +1.0";
     "ctrl+minus" = "change_font_size all -1.0";
     "ctrl+0" = "change_font_size all 0";
+    "ctrl+shift+a>m" = "set_background_opacity +0.03";
+    "ctrl+shift+a>l" = "set_background_opacity -0.03";
+    "ctrl+shift+a>0" = "set_background_opacity default";
   };
 }
