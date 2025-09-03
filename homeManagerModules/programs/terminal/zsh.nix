@@ -50,15 +50,25 @@
         name = "conda-zsh-completion";
         src = inputs.conda-zsh-completion;
       }
+      # {
+      #   name = "zsh-nix-dev-completions";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "NovaBG03";
+      #     repo = "zsh-nix-dev-completions";
+      #     rev = "2ba15888a8b068408831e3b00b6d5d747804e757";
+      #     sha256 = "sha256-oC0UjCOTr3cCn2zKHk3ofa4C8m79sdHEvrqzF/Vd5fc=";
+      #   };
+      #   file = "plugin.zsh";
+      # }
       {
-        name = "zsh-nix-dev-completions";
+        name = "zsh-completion-sync";
         src = pkgs.fetchFromGitHub {
-          owner = "NovaBG03";
-          repo = "zsh-nix-dev-completions";
-          rev = "2ba15888a8b068408831e3b00b6d5d747804e757";
-          sha256 = "sha256-oC0UjCOTr3cCn2zKHk3ofa4C8m79sdHEvrqzF/Vd5fc=";
+          owner = "BronzeDeer";
+          repo = "zsh-completion-sync";
+          rev = "master";
+          sha256 = "sha256-nTxeSUlYdl25MFZoLtpYTYq661iaik1RMj21ClOMY3c=";
         };
-        file = "plugin.zsh";
+        file = "zsh-completion-sync.zsh";
       }
     ];
   };
