@@ -51,14 +51,14 @@
         src = inputs.conda-zsh-completion;
       }
       {
-        name = "zsh-nix-shell";
-        file = "nix-shell.plugin.zsh";
+        name = "zsh-nix-dev-completions";
         src = pkgs.fetchFromGitHub {
-          owner = "chisui";
-          repo = "zsh-nix-shell";
-          rev = "v0.8.0";
-          sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
+          owner = "NovaBG03";
+          repo = "zsh-nix-dev-completions";
+          rev = "2ba15888a8b068408831e3b00b6d5d747804e757";
+          sha256 = "sha256-oC0UjCOTr3cCn2zKHk3ofa4C8m79sdHEvrqzF/Vd5fc=";
         };
+        file = "plugin.zsh";
       }
     ];
   };
