@@ -77,7 +77,7 @@
     };
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_lqx;
+  # boot.kernelPackages = pkgs.linuxPackages_lqx;
   musnix.soundcardPciId = "00:1f.3";
 
   system.stateVersion = "24.11";

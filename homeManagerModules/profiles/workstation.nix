@@ -32,6 +32,7 @@ in {
       josm
       unstable.deskflow
 
+      weylus
       krita
       ai-krita
       gimp-with-plugins
