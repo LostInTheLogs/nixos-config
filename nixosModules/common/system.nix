@@ -47,7 +47,6 @@
     EDITOR = "nvim";
   };
 
-  environment.systemPackages = with pkgs; [smartmontools busybox];
   programs.nix-index-database.comma.enable = true;
 
   services.tailscale.enable = true;
