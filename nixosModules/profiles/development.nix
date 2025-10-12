@@ -24,10 +24,17 @@ in {
 
     fonts.packages = with pkgs; [nerd-fonts.fira-code];
 
+    networking.firewall = {
+      allowedTCPPorts = [3306];
+    };
+
     environment.systemPackages = with pkgs; [
       xclip
       wl-clipboard
       trashy
+      podman-compose
+      dbeaver-bin
+      mariadb
 
       # alejandra
       # nixd
