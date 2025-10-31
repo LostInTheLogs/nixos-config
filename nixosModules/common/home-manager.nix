@@ -26,7 +26,7 @@ in {
           useGlobalPkgs = true;
           extraSpecialArgs = {inherit inputs;};
           backupFileExtension = "hm-bup";
-          overwriteBackup = true;
+          # overwriteBackup = true; # TODO: set to true on next home manager
           sharedModules = [
             inputs.self.homeManagerModules.default
             {

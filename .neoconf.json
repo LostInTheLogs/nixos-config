@@ -9,7 +9,7 @@
   "lspconfig": {
     "nixd": {
       "nixd.nixpkgs.expr": "import (builtins.getFlake (toString ./.)).inputs.nixpkgs {}",
-      // "nixd.options.nixosModules.expr": "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.home.options",
+      "nixd.options.nixosModules.expr": "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.home.options",
       "nixd.options.homeManagerModules.expr": "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.home.options.home-manager.users.type.getSubOptions []"
     }
   }

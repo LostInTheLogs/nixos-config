@@ -1,8 +1,6 @@
 {
   inputs,
-  lib,
   pkgs,
-  config,
   ...
 }: {
   imports =
@@ -61,7 +59,16 @@
     enable = true;
     package = pkgs.sambaFull;
     openFirewall = true;
-    # usershares.enable = true; TODO: add on next release
+    usershares.enable = true;
+    settings = {
+      global = {
+        "usershare owner only" = false;
+      };
+    };
+  };
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
   };
 
   zramSwap.enable = true;
