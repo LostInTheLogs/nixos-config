@@ -22,7 +22,16 @@ in {
       };
     };
 
-    fonts.packages = with pkgs; [nerd-fonts.fira-code];
+    fonts = {
+      packages = with pkgs; [nerd-fonts.fira-code my.iosevka-custom];
+      fontconfig = {
+        enable = true;
+        defaultFonts = {
+          sansSerif = ["Noto Sans"];
+          monospace = ["Iosevka Custom"];
+        };
+      };
+    };
 
     networking.firewall = {
       allowedTCPPorts = [3306];
