@@ -29,6 +29,8 @@
           conda
           pip
         ]))
+
+      tokei
     ];
 
     programs.atuin = {

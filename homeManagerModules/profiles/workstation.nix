@@ -51,6 +51,9 @@ in {
       libreoffice
       pdfarranger
       vlc
+
+      lrcget
+      picard
     ];
 
     programs.dimland.enable = true;
