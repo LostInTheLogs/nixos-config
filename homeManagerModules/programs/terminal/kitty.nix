@@ -9,7 +9,7 @@
       paste_actions = "confirm";
       window_padding_width = "0 0 0 0";
       confirm_window_close = 2;
-      background_opacity = "0.93";
+      # background_opacity = "0.93";
       dynamic_background_opacity = true;
     };
   };
