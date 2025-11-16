@@ -33,6 +33,9 @@ in {
       };
     };
 
+    # TODO: for uni only
+    systemd.tmpfiles.rules = ["L+ /usr/sbin/ipsec - - - - ${pkgs.strongswan}/sbin/ipsec"];
+
     networking.firewall = {
       allowedTCPPorts = [3306];
     };
