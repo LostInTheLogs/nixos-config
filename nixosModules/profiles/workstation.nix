@@ -23,7 +23,16 @@ in {
 
     fonts.packages = with pkgs; [noto-fonts-cjk-sans noto-fonts noto-fonts-lgc-plus noto-fonts-color-emoji];
 
-    environment.systemPackages = with pkgs; [kdePackages.plasma-pa kdePackages.filelight kdePackages.partitionmanager protonvpn-gui mullvad mullvad-vpn tor-browser];
+    environment.systemPackages = with pkgs; [
+      kdePackages.plasma-pa
+      kdePackages.filelight
+      kdePackages.partitionmanager
+      protonvpn-gui
+      mullvad
+      mullvad-vpn
+      tor-browser
+      bottles
+    ];
 
     services.sunshine = {
       enable = true;

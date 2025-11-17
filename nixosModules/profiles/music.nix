@@ -28,7 +28,6 @@ in {
       yabridge
       yabridgectl
       yabridge-wine
-      bottles
     ];
 
     services.pipewire.extraConfig.pipewire = {
