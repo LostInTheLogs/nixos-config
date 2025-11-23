@@ -45,7 +45,7 @@ in {
       wl-clipboard
       trashy
       podman-compose
-      dbeaver-bin
+      unstable.dbeaver-bin
       mariadb
 
       # alejandra
