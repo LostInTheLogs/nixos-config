@@ -1,12 +1,14 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   config = lib.mkMerge [
     {
       # √(2560² + 1600²) px / 16 in ≃ 189 dpi
       services.xserver.dpi = 189;
+      environment.systemPackages = with pkgs; [nvtopPackages.full];
 
       specialisation = {
         NVIDIA_GPU.configuration = {
@@ -17,6 +19,13 @@
           # # Still needs to load at some point if we want X11 to work
           boot.kernelModules = ["amdgpu"];
           hardware.amdgpu.initrd.enable = true;
+
+          hardware.opengl = {
+            enable = true;
+            extraPackages = with pkgs; [
+              nvidia-vaapi-driver
+            ];
+          };
 
           hardware.nvidia = {
             # Modesetting is required.

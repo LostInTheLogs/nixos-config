@@ -25,6 +25,14 @@
     powerManagement.finegrained = false;
     open = true;
   };
+
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      nvidia-vaapi-driver
+    ];
+  };
+
   environment.variables = {
     # Required to run the correct GBM backend for nvidia GPUs on wayland
     GBM_BACKEND = "nvidia-drm";
@@ -40,10 +48,11 @@
     MOZ_DISABLE_RDD_SANDBOX = "1";
   };
 
-  environment.systemPackages = [pkgs.libva-utils];
+  environment.systemPackages = with pkgs; [libva-utils nvtopPackages.nvidia];
 
   # va api
   programs.firefox.preferences = {
+    "media.hardware-video-decoding.force-enabled" = true;
     "media.ffmpeg.vaapi.enabled" = true;
     "media.rdd-ffmpeg.enabled" = true;
     "media.av1.enabled" = true;
