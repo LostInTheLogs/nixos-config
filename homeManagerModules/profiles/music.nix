@@ -10,6 +10,7 @@
       pkgs.my.carla
     ];
     text = ''
+      systemd-inhibit --who run-carla --why=piano-playing sleep 1h
       PIPEWIRE_LATENCY="2048/48000" carla "$HOME/Documents/music/all.carxp"
     '';
   };
