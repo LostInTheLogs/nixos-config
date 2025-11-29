@@ -10,8 +10,12 @@
       pkgs.my.carla
     ];
     text = ''
-      systemd-inhibit --who run-carla --why=piano-playing sleep 1h
+      systemd-inhibit --who=run-carla --why="piano-playing" sleep 1h &
+      INHIBIT_PID=$!
+
       PIPEWIRE_LATENCY="2048/48000" carla "$HOME/Documents/music/all.carxp"
+      kill "$INHIBIT_PID" 2>/dev/null
+      wait "$INHIBIT_PID" 2>/dev/null
     '';
   };
 in {
