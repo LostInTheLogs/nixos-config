@@ -5,12 +5,7 @@
   ...
 }: let
   cfg = config.my.profiles.workstation;
-
   timeoutConfig = ''
-    DefaultTimeoutStartSec=10s
-    DefaultTimeoutStopSec=10s
-    DefaultTimeoutAbortSec=10s
-    DefaultDeviceTimeoutSec=10s
   '';
 in {
   options.my.profiles.workstation.enable = lib.mkEnableOption "the workstation profile";
@@ -50,8 +45,12 @@ in {
     };
     systemd.services.earlyoom.serviceConfig.User = "lost"; # TODO: remove https://github.com/NixOS/nixpkgs/pull/375649
 
-    systemd.extraConfig = timeoutConfig;
-    systemd.user.extraConfig = timeoutConfig;
+    systemd.settings.Manager = {
+      DefaultTimeoutStartSec = "10s";
+      DefaultTimeoutStopSec = "10s";
+      DefaultTimeoutAbortSec = "10s";
+      DefaultDeviceTimeoutSec = "10s";
+    };
 
     services.flatpak.enable = true;
     xdg.portal.enable = true;
@@ -65,7 +64,7 @@ in {
     services.printing.enable = true;
     services.printing.drivers = with pkgs; [
       gutenprint
-      gutenprintBin
+      gutenprint-bin
       brgenml1lpr
       brgenml1cupswrapper
       pkgs.cnijfilter2
