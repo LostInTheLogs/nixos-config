@@ -2,7 +2,6 @@
   lib,
   pkgs,
   inputs,
-  config,
   ...
 }: {
   home.packages = with pkgs; [
@@ -19,7 +18,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     history.path = "$XDG_STATE_HOME/zsh/history";
-    dotDir = "${config.xdg.configHome}/zsh";
+    dotDir = ".config/zsh";
     shellAliases = {
       cloc = "tokei";
       ls = "EZA_ICON_SPACING=2 eza -a --icons --group-directories-first";
