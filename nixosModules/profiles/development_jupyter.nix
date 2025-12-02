@@ -29,9 +29,29 @@ in {
         c.NotebookApp.token = ""
       '';
       extraPackages = with pkgs; [
+        pkgs.python3.pkgs.black
+        pkgs.python3.pkgs.isort
         unstable.python3.pkgs.jupyter-themes
-        unstable.python3.pkgs.jupyterlab-vim
+        (python3.pkgs.rpy2.override {extraRPackages = with pkgs.rPackages; [formatR styler];})
         python3.pkgs.jupyterlab-lsp
+        (python3.pkgs.buildPythonPackage rec {
+          pname = "jupyterlab-vim";
+          version = "4.1.4";
+          pyproject = true;
+          doChecks = false;
+
+          build-system = with python3Packages; [
+            hatchling
+            hatch-jupyter-builder
+            hatch-nodejs-version
+          ];
+          dependencies = [python3.pkgs.jupyter];
+          src = fetchPypi {
+            pname = "jupyterlab_vim";
+            inherit version;
+            hash = "sha256-q/KJGq+zLwy5StmDIa5+vL4Mq+Uj042A1WnApQuFIlo=";
+          };
+        })
         (python3.pkgs.buildPythonPackage rec {
           pname = "jupyterlab-code-formatter";
           version = "3.0.2";
@@ -68,8 +88,10 @@ in {
       };
     };
 
-    environment.systemPackages = [
+    environment.systemPackages = with pkgs; [
       Renv
+      python313Packages.nbconvert
+      (texliveSmall.withPackages (ps: with ps; [tcolorbox pdfcol adjustbox titling enumitem soul rsfs]))
     ];
   };
 }
