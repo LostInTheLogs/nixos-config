@@ -20,7 +20,7 @@
           boot.kernelModules = ["amdgpu"];
           hardware.amdgpu.initrd.enable = true;
 
-          hardware.opengl = {
+          hardware.graphics = {
             enable = true;
             extraPackages = with pkgs; [
               nvidia-vaapi-driver
