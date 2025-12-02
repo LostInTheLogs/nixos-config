@@ -45,8 +45,6 @@ in {
       steam-run
       # minecraft
       prismlauncher
-      modrinth-app
-      ferium
     ];
   };
 }
