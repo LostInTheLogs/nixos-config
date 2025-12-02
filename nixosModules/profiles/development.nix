@@ -45,8 +45,11 @@ in {
       wl-clipboard
       trashy
       podman-compose
-      unstable.dbeaver-bin
+
+      #uni
       mariadb
+      unstable.dbeaver-bin
+      (rstudioWrapper.override {packages = with rPackages; [ggplot2 MASS tidyverse];})
 
       # alejandra
       # nixd
