@@ -115,14 +115,12 @@ in {
       unstable.dbeaver-bin
       (pkgs.rWrapper.override {
         packages = with pkgs.rPackages; [
-          IRkernel
           tidyverse
           MASS
           ggplot2
-          languageserver
-          languageserversetup
         ];
       })
+      (rstudioWrapper.override {packages = with rPackages; [ggplot2 MASS tidyverse];})
 
       # alejandra
       # nixd
