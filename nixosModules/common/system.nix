@@ -57,7 +57,6 @@
 
   programs.nix-ld.enable = true;
 
-  # documentation.man.man-db.enable = true;
   documentation.man.generateCaches = true;
 
   services.xserver.xkb.layout = "pl";

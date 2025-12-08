@@ -29,10 +29,10 @@ in {
         c.NotebookApp.token = ""
       '';
       extraPackages = with pkgs; [
-        pkgs.python3.pkgs.black
-        pkgs.python3.pkgs.isort
-        unstable.python3.pkgs.jupyter-themes
-        (python3.pkgs.rpy2.override {extraRPackages = with pkgs.rPackages; [formatR styler];})
+        python3.pkgs.black
+        python3.pkgs.isort
+        python3.pkgs.jupyter-themes
+        python3.pkgs.rpy2 #.override {extraRPackages = with pkgs.rPackages; [formatR styler];})
         python3.pkgs.jupyterlab-lsp
         (python3.pkgs.buildPythonPackage rec {
           pname = "jupyterlab-vim";

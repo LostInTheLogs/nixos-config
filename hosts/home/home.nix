@@ -38,8 +38,8 @@
   my.profiles = {
     workstation.enable = true;
     development.enable = true;
-    gaming.enable = true;
-    music.enable = true;
+    # gaming.enable = true;
+    # music.enable = true;
   };
 
   # environment.systemPackages = with pkgs; [];
