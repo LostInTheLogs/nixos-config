@@ -6,7 +6,7 @@
 }: {
   nix = {
     # Lix, the higher performance Nix fork.
-    # package = pkgs.lix;
+    package = pkgs.lix;
 
     # Collect garbage
     gc = {
@@ -22,11 +22,6 @@
     };
 
     settings = {
-      # Tell nix to use the xdg spec for base directories
-      # while transitioning, any state must be carried over
-      # manually, as Nix won't do it for us.
-      use-xdg-base-directories = true;
-
       # Free up to 10GiB whenever there is less than 5GB left.
       # this setting is in bytes, so we multiply with 1024 thrice
       min-free = "${toString (5 * 1024 * 1024 * 1024)}";
@@ -70,16 +65,15 @@
       extra-experimental-features = [
         "flakes" # flakes
         "nix-command" # experimental nix commands
-        "recursive-nix" # let nix invoke itself
-        "ca-derivations" # content addressed nix
-        "impure-derivations" # __impure derivations
         "auto-allocate-uids" # allow nix to automatically pick UIDs, rather than creating nixbld* user accounts
         "cgroups" # allow nix to execute builds inside cgroups
-        # "repl-flake" # lix only, allow passing installables to nix repl
         "no-url-literals" # disallow deprecated url-literals, i.e., URLs without quotation
-        "dynamic-derivations" # allow "text hashing" derivation outputs, so we can build .drv files.
 
         # Those don't actually exist on Lix so they have to be disabled
+        # "recursive-nix" # let nix invoke itself
+        # "ca-derivations" # content addressed nix
+        # "dynamic-derivations" # allow "text hashing" derivation outputs, so we can build .drv files.
+        # "impure-derivations" # __impure derivations
         # configurable-impure-env" # allow impure environments
         # "git-hashing" # allow store objects which are hashed via Git's hashing algorithm
         # "verified-fetches" # enable verification of git commit signatures for fetchGit
@@ -104,14 +98,6 @@
       # tl;dr: this is a security vulnerability.
       accept-flake-config = false;
 
-      # Whether to execute builds inside cgroups. cgroups are
-      # "a Linux kernel feature that limits, accounts for, and
-      # isolates the resource usage (CPU, memory, disk I/O, etc.)
-      # of a collection of processes."
-      # See:
-      # <https://en.wikipedia.org/wiki/Cgroups>
-      use-cgroups = pkgs.stdenv.isLinux; # only supported on Linux
-
       # Use binary cache, this is not Gentoo
       # external builders can also pick up those substituters
       builders-use-substitutes = true;
@@ -135,6 +121,17 @@
         "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
         "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
       ];
+
+      # lix only
+      use-xdg-base-directories = true;
+
+      # Whether to execute builds inside cgroups. cgroups are
+      # "a Linux kernel feature that limits, accounts for, and
+      # isolates the resource usage (CPU, memory, disk I/O, etc.)
+      # of a collection of processes."
+      # See:
+      # <https://en.wikipedia.org/wiki/Cgroups>
+      use-cgroups = pkgs.stdenv.isLinux; # only supported on Linux
     };
   };
 
