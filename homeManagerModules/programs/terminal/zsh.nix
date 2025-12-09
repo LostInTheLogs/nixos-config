@@ -181,6 +181,9 @@
       python = {
         detect_extensions = [];
       };
+      nix_shell = {
+        symbol = "❄️";
+      };
     };
   };
   programs.direnv.enable = true;
