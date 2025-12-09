@@ -182,7 +182,7 @@
         detect_extensions = [];
       };
       nix_shell = {
-        symbol = "❄️";
+        symbol = "❄️ ";
       };
     };
   };
