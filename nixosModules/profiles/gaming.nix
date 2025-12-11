@@ -41,10 +41,9 @@ in {
       xsettingsd
       xorg.xrdb
 
-      # steam
       steam-run
-      # minecraft
       prismlauncher
+      lutris
     ];
   };
 }
