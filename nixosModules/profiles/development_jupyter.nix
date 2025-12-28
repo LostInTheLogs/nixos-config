@@ -15,6 +15,7 @@
       languageserversetup
     ];
   };
+  rpy2-rinterface = pkgs.python3.pkgs.rpy2-rinterface.overrideAttrs (_: prev: {buildInputs = prev.buildInputs ++ (with pkgs.rPackages; [formatR styler]);});
 in {
   config = lib.mkIf cfg.enable {
     systemd.services.jupyter.path = [
@@ -32,7 +33,10 @@ in {
         python3.pkgs.black
         python3.pkgs.isort
         python3.pkgs.jupyter-themes
-        python3.pkgs.rpy2 #.override {extraRPackages = with pkgs.rPackages; [formatR styler];})
+        (python3.pkgs.rpy2.override {
+          inherit rpy2-rinterface;
+          rpy2-robjects = python3.pkgs.rpy2-robjects.override {inherit rpy2-rinterface;};
+        })
         python3.pkgs.jupyterlab-lsp
         (python3.pkgs.buildPythonPackage rec {
           pname = "jupyterlab-vim";

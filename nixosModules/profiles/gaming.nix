@@ -43,6 +43,7 @@ in {
 
       steam-run
       prismlauncher
+      gamescope
       (lutris.override
         {
           extraLibraries = pkgs:
