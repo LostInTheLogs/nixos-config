@@ -24,7 +24,6 @@
       cloc = "tokei";
       ls = "EZA_ICON_SPACING=2 eza -a --icons --group-directories-first";
       ll = "EZA_ICON_SPACING=2 eza -al --icons --group-directories-first";
-      cd = "z";
     };
     oh-my-zsh = {
       enable = true;
