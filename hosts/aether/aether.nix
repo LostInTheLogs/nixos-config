@@ -49,6 +49,13 @@
   services.strongswan.enable = true;
   services.xl2tpd.enable = true;
   environment.etc."strongswan.conf".text = "";
+  networking.networkmanager = {
+    plugins = with pkgs; [
+      networkmanager-fortisslvpn
+      networkmanager-l2tp
+      networkmanager-openvpn
+    ];
+  };
 
   # boot.kernelPackages = pkgs.unstable.linuxPackages_6_12; # 6.11 breaks nvidia
 
