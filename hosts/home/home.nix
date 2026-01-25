@@ -19,21 +19,6 @@
     autoLogin.enable = true;
     autoLogin.user = "lost";
   };
-  networking.interfaces.enp6s0 = {
-    wakeOnLan = {
-      enable = true;
-    };
-  };
-
-  # alx-wol patch todo
-  # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_8;
-  # boot.kernelPatches ={
-  #   name = "rt";
-  #   patch = fetchurl {
-  #     url = "mirror://kernel/linux/kernel/projects/rt/${branch}/older/patch-${version}.patch.xz";
-  #     sha256 = "12c2qpifcgij7hilhd7xrnqaz04gqf41m93pmlm8cv4nxz58cy36";
-  #   };
-  # } ;
 
   my.profiles = {
     workstation.enable = true;
@@ -85,17 +70,23 @@
   };
 
   # boot.kernelPackages = pkgs.linuxPackages_lqx;
-  boot.kernelPatches = [
-    {
-      name = "wake on lan";
-      patch = ./alx-wol_v6.12.patch;
-      # https://github.com/AndiWeiss/alx-wol/blob/master/patches/alx-wol_v6.12.patch
-      # :%s@v6\.12[^/]*/alx/@drivers/net/ethernet/atheros/alx/@g
-      # :g/^diff -u/d
-      # :%s@^--- @--- a/@
-      # :%s@^+++ @+++ a/@
-    }
-  ];
+
+  # networking.interfaces.enp6s0 = {
+  #   wakeOnLan = {
+  #     enable = true;
+  #   };
+  # };
+  # boot.kernelPatches = [
+  #   {
+  #     name = "wake on lan";
+  #     patch = ./alx-wol_v6.12.patch;
+  #     # https://github.com/AndiWeiss/alx-wol/blob/master/patches/alx-wol_v6.12.patch
+  #     # :%s@v6\.12[^/]*/alx/@drivers/net/ethernet/atheros/alx/@g
+  #     # :g/^diff -u/d
+  #     # :%s@^--- @--- a/@
+  #     # :%s@^+++ @+++ a/@
+  #   }
+  # ];
 
   musnix.soundcardPciId = "00:1f.3";
 
