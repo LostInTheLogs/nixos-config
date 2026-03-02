@@ -15,6 +15,14 @@
       common-pc-ssd
     ]);
 
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  programs.virt-manager.enable = true;
+  environment.systemPackages = with pkgs; [
+    virt-viewer
+  ];
+
   services.displayManager = {
     autoLogin.enable = true;
     autoLogin.user = "lost";
