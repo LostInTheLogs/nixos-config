@@ -21,7 +21,7 @@ in {
   ];
   config = lib.mkIf osConfig.my.profiles.workstation.enable {
     home.packages = with pkgs; [
-      brave
+      ungoogled-chromium
 
       youtube-music
 
