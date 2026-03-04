@@ -17,7 +17,7 @@
   };
   rpy2-rinterface = pkgs.python3.pkgs.rpy2-rinterface.overrideAttrs (_: prev: {buildInputs = prev.buildInputs ++ (with pkgs.rPackages; [formatR styler]);});
 in {
-  options.my.profiles.development.jupyter = lib.mkEnableOption "jupyter with R";
+  options.my.profiles.development.jupyter.enable = lib.mkEnableOption "jupyter with R";
   config = lib.mkIf (cfg.enable && cfg.jupyter.enable) {
     systemd.services.jupyter.path = [
       pkgs.bash
