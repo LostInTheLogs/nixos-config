@@ -23,16 +23,15 @@ in {
     home.packages = with pkgs; [
       ungoogled-chromium
 
-      youtube-music
+      # youtube-music
 
       vesktop
       discord
       obsidian
-      # teams-for-linux
-      josm
+      # josm
       unstable.deskflow
 
-      weylus
+      # weylus
       krita
       ai-krita
       gimp-with-plugins

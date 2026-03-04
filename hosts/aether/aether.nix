@@ -46,17 +46,6 @@
     configDir = "/home/lost/.config/syncthing"; # Folder for Syncthing's settings and keys
   };
 
-  services.strongswan.enable = true;
-  services.xl2tpd.enable = true;
-  environment.etc."strongswan.conf".text = "";
-  networking.networkmanager = {
-    plugins = with pkgs; [
-      networkmanager-fortisslvpn
-      networkmanager-l2tp
-      networkmanager-openvpn
-    ];
-  };
-
   # boot.kernelPackages = pkgs.unstable.linuxPackages_6_12; # 6.11 breaks nvidia
 
   time.hardwareClockInLocalTime = true; #  dual booting windows :/

@@ -20,10 +20,8 @@ in {
       kdePackages.plasma-pa
       kdePackages.filelight
       kdePackages.partitionmanager
+      kdePackages.ark # for dolphin
       protonvpn-gui
-      mullvad
-      mullvad-vpn
-      tor-browser
       bottles
     ];
 

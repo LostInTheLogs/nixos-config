@@ -21,7 +21,6 @@
       nodejs
       pnpm
       gcc
-      unzip
 
       conda
       (pkgs.python3.withPackages (python-pkgs:
