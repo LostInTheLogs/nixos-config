@@ -12,6 +12,8 @@
 
       zellij
       vscodium-fhs
+      jetbrains.idea
+      jetbrains.rider
       neovim
       nixd
       alejandra
