@@ -10,10 +10,16 @@
       just
       gnumake
 
-      zellij
-      vscodium-fhs
       jetbrains.idea
       jetbrains.rider
+      icu
+      dotnetCorePackages.sdk_10_0
+      msbuild
+      # mono
+
+      zellij
+      vscodium-fhs
+
       neovim
       nixd
       alejandra
