@@ -66,7 +66,13 @@
         };
       };
 
-      my = final: prev: {my = import ./pkgs {pkgs = prev;};};
+      my = final: prev: {
+        my = import ./pkgs {
+          pkgs = prev;
+          inherit lib;
+          config = {};
+        };
+      };
     };
 
     devShells = mylib.forAllSystems (
@@ -77,11 +83,16 @@
       }
     );
 
-    packages = mylib.forAllSystems (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in (import ./pkgs (args // {inherit pkgs;}))
-    );
+    # packages = mylib.forAllSystems (
+    #   system: let
+    #     pkgs = nixpkgs.legacyPackages.${system};
+    #   in (import ./pkgs (args
+    #     // {
+    #       inherit pkgs;
+    #       inherit lib;
+    #       config = {};
+    #     }))
+    # );
 
     formatter = mylib.forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
   };

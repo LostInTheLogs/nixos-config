@@ -13,9 +13,11 @@
       jetbrains.idea
       jetbrains.rider
       icu
-      dotnetCorePackages.sdk_10_0
-      msbuild
-      # mono
+      (with dotnetCorePackages;
+        combinePackages [
+          dotnetCorePackages.sdk_10_0-bin
+        ])
+      mono
 
       zellij
       vscodium-fhs
