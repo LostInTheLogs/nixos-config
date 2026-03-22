@@ -23,7 +23,7 @@ in {
     };
 
     fonts = {
-      packages = with pkgs; [nerd-fonts.fira-code my.iosevka-custom];
+      packages = with pkgs; [nerd-fonts.fira-code my.iosevka-custom corefonts];
       fontconfig = {
         enable = true;
         defaultFonts = {
