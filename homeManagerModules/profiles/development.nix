@@ -10,7 +10,7 @@
       just
       gnumake
 
-      jetbrains.idea
+      my.jetbrains.idea
       jetbrains.rider
       icu
       (with dotnetCorePackages;
