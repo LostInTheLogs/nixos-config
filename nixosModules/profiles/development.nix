@@ -44,9 +44,9 @@ in {
       podman-compose
 
       #uni
-      mariadb
+      # mariadb
       unstable.dbeaver-bin
-      (rstudioWrapper.override {packages = with rPackages; [ggplot2 MASS tidyverse];})
+      # (rstudioWrapper.override {packages = with rPackages; [ggplot2 MASS tidyverse];})
 
       # alejandra
       # nixd

@@ -37,7 +37,7 @@ in {
       gimp-with-plugins
       inkscape
 
-      tenacity
+      audacity
       kdePackages.kdenlive
       losslesscut-bin
       ffmpeg-full
