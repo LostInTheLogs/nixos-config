@@ -79,22 +79,22 @@
 
   # boot.kernelPackages = pkgs.linuxPackages_lqx;
 
-  # networking.interfaces.enp6s0 = {
-  #   wakeOnLan = {
-  #     enable = true;
-  #   };
-  # };
-  # boot.kernelPatches = [
-  #   {
-  #     name = "wake on lan";
-  #     patch = ./alx-wol_v6.12.patch;
-  #     # https://github.com/AndiWeiss/alx-wol/blob/master/patches/alx-wol_v6.12.patch
-  #     # :%s@v6\.12[^/]*/alx/@drivers/net/ethernet/atheros/alx/@g
-  #     # :g/^diff -u/d
-  #     # :%s@^--- @--- a/@
-  #     # :%s@^+++ @+++ a/@
-  #   }
-  # ];
+  networking.interfaces.enp6s0 = {
+    wakeOnLan = {
+      enable = true;
+    };
+  };
+  boot.kernelPatches = [
+    {
+      name = "wake on lan";
+      patch = ./alx-wol_v6.12.patch;
+      # https://github.com/AndiWeiss/alx-wol/blob/master/patches/alx-wol_v6.12.patch
+      # :%s@v6\.12[^/]*/alx/@drivers/net/ethernet/atheros/alx/@g
+      # :g/^diff -u/d
+      # :%s@^--- @--- a/@
+      # :%s@^+++ @+++ a/@
+    }
+  ];
 
   musnix.soundcardPciId = "00:1f.3";
 
