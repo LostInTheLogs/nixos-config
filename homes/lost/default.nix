@@ -10,4 +10,9 @@
     stateVersion = osConfig.system.stateVersion;
     sessionPath = ["$HOME/.local/bin"];
   };
+  xdg.configFile."nixpkgs/config.nix".text = ''
+    {
+      allowUnfree = true;
+    }
+  '';
 }

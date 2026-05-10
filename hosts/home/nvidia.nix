@@ -26,6 +26,7 @@
     open = true;
   };
 
+  nixpkgs.config.cudaSupport = true;
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [

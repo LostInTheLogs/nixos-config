@@ -20,6 +20,7 @@
           boot.kernelModules = ["amdgpu"];
           hardware.amdgpu.initrd.enable = true;
 
+          nixpkgs.config.cudaSupport = true;
           hardware.graphics = {
             enable = true;
             extraPackages = with pkgs; [
