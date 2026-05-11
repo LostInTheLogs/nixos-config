@@ -97,6 +97,23 @@
   ];
 
   musnix.soundcardPciId = "00:1f.3";
+  services.pipewire.wireplumber.extraConfig.micVolume = {
+    "monitor.alsa.rules" = [
+      {
+        matches = [
+          {
+            "node.name" = "alsa_input.usb-Solid_State_System_Co._Ltd._LCS_USB_Audio_000000000000-00.mono-fallback";
+          }
+        ];
+
+        actions = {
+          update-props = {
+            "audio.volume" = 1.35;
+          };
+        };
+      }
+    ];
+  };
 
   system.stateVersion = "24.11";
 }
