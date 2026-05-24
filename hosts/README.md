@@ -36,7 +36,7 @@ Machine:
 Battery:
   ID-1: BAT0 charge: 59.2 Wh (75%) condition: 78.9/80 Wh (98.6%)
 CPU:
-  Info: 8-core AMD Ryzen 7 6800H with Radeon Graphics [MT MCP] speed (MHz): avg: 1094
+  Info: 8-core AMD Ryzen 7 6800H with Radeon Graphics [MT MCP] (6GB VRAM) speed (MHz): avg: 1094
     min/max: 400/4785
 Graphics:
   Device-1: NVIDIA GA106M [GeForce RTX 3060 Mobile / Max-Q] driver: nvidia v: 580.142
