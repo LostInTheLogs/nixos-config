@@ -11,8 +11,11 @@ in {
   config = lib.mkIf cfg.enable {
     virtualisation.containers.enable = true;
     virtualisation = {
-      podman = {
+      docker = {
         enable = true;
+      };
+      podman = {
+        enable = false;
 
         # Create a `docker` alias for podman, to use it as a drop-in replacement
         dockerCompat = true;
@@ -41,7 +44,7 @@ in {
       xclip
       wl-clipboard
       trashy
-      podman-compose
+      # podman-compose
 
       #uni
       # mariadb
