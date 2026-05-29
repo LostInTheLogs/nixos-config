@@ -35,9 +35,11 @@
     music.enable = true;
   };
 
+  my.users.users.lost.enable = true;
+
   # environment.systemPackages = with pkgs; [];
 
-  my.users.users.lost.enable = true;
+  programs.kdeconnect.enable = true;
 
   hardware.nvidia-container-toolkit.enable = true;
 
