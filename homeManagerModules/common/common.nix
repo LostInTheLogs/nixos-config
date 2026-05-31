@@ -1,7 +1,8 @@
-{...}: {
+{pkgs, ...}: {
   # Allow HM to manage itself when in standalone mode.
   # This makes the home-manager command available to users.
   programs.home-manager.enable = true;
+  home.packages = [pkgs.home-manager];
 
   # Try to save some space by not installing variants of the home-manager
   # manual, which I don't use at all. Unlike what the name implies, this

@@ -17,7 +17,12 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+    syntaxHighlighting = {
+      enable = true;
+      styles = {
+        "comment" = "fg=8";
+      };
+    };
     history.path = "$XDG_STATE_HOME/zsh/history";
     dotDir = "${config.xdg.configHome}/zsh";
     shellAliases = {
