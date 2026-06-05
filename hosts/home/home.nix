@@ -66,7 +66,7 @@
     openFirewall = true;
   };
 
-  zramSwap.enable = true;
+  # zramSwap.enable = true;
 
   # nix copy --to file:///mnt/SSD/nixcache <nix store path>
   nix = {
