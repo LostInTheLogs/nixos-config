@@ -44,6 +44,7 @@
   hardware.nvidia-container-toolkit.enable = true;
 
   services.syncthing = {
+    openDefaultPorts = true;
     enable = true;
     user = "lost";
     dataDir = "/home/lost/Documents"; # Default folder for new synced folders
