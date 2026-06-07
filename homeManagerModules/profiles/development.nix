@@ -22,7 +22,7 @@
       zellij
       vscodium-fhs
 
-      neovim
+      unstable.neovim
       nixd
       alejandra
       gh
