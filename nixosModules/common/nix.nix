@@ -4,6 +4,10 @@
   pkgs,
   ...
 }: {
+  programs.nh = {
+    enable = true;
+  };
+
   nix = {
     # Lix, the higher performance Nix fork.
     package = pkgs.lix;
@@ -67,7 +71,7 @@
         "nix-command" # experimental nix commands
         "auto-allocate-uids" # allow nix to automatically pick UIDs, rather than creating nixbld* user accounts
         "cgroups" # allow nix to execute builds inside cgroups
-        "no-url-literals" # disallow deprecated url-literals, i.e., URLs without quotation
+        # "no-url-literals" # disallow deprecated url-literals, i.e., URLs without quotation
 
         # Those don't actually exist on Lix so they have to be disabled
         # "recursive-nix" # let nix invoke itself
