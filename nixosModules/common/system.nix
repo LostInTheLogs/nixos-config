@@ -57,7 +57,7 @@
 
   programs.nix-ld.enable = true;
 
-  documentation.man.generateCaches = true;
+  documentation.man.cache.enable = true;
 
   services.xserver.xkb.layout = "pl";
   console.keyMap = "pl";

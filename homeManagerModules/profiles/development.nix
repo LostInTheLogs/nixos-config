@@ -32,12 +32,12 @@
       pnpm
       gcc
 
-      conda
-      (pkgs.python3.withPackages (python-pkgs:
-        with python-pkgs; [
-          conda
-          pip
-        ]))
+      unstable.conda
+      # (pkgs.python3.withPackages (python-pkgs:
+      #   with python-pkgs; [
+      #     conda
+      #     pip
+      #   ]))
 
       tokei
     ];

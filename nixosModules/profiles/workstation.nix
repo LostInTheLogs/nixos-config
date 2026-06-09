@@ -21,7 +21,7 @@ in {
       kdePackages.filelight
       kdePackages.partitionmanager
       kdePackages.ark # for dolphin
-      protonvpn-gui
+      proton-vpn
       bottles
     ];
 

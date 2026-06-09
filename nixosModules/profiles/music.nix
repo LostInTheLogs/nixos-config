@@ -7,7 +7,7 @@
 }: let
   cfg = config.my.profiles.music;
   yabridge-wine = pkgs.writeShellScriptBin "yabridge-wine" ''
-    exec ${pkgs.wineWowPackages.yabridge}/bin/wine "$@"
+    exec ${pkgs.wineWow64Packages.yabridge}/bin/wine "$@"
   '';
 in {
   imports = [

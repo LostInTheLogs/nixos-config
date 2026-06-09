@@ -39,7 +39,7 @@ in {
       #   ln -s ${pkgs.kdePackages.breeze}/share/icons/breeze_cursors $out/share/icons/default
       # '')
       xsettingsd
-      xorg.xrdb
+      xrdb
 
       steam-run
       prismlauncher
