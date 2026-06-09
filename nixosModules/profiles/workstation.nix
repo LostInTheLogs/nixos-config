@@ -34,12 +34,12 @@ in {
 
     programs.firefox.enable = true;
 
-    # services.earlyoom = {
-    #   enable = true;
-    #   enableNotifications = true;
-    #   freeMemThreshold = 3;
-    # };
-    # systemd.services.earlyoom.serviceConfig.User = "lost"; # TODO: remove https://github.com/NixOS/nixpkgs/pull/375649
+    services.earlyoom = {
+      enable = true;
+      enableNotifications = true;
+      freeMemThreshold = 3;
+    };
+    systemd.services.earlyoom.serviceConfig.User = "lost"; # TODO: remove https://github.com/NixOS/nixpkgs/pull/375649
 
     systemd.settings.Manager = {
       DefaultTimeoutStartSec = "10s";
