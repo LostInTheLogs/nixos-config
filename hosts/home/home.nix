@@ -103,25 +103,18 @@
   ];
 
   musnix.soundcardPciId = "00:1f.3";
-  services.pipewire.wireplumber.extraConfig."99-forced-mic-volume" = {
-    "context.modules" = [
+  services.pipewire.wireplumber.extraConfig.micVolume = {
+    "monitor.alsa.rules" = [
       {
-        name = "libpipewire-module-loopback";
-        args = {
-          "node.description" = "Forced 135% Mic";
-          "capture.props" = {
-            "node.name" = "forced_mic_input";
-            "target.object" = "alsa_input.usb-Solid_State_System_Co._Ltd._LCS_USB_Audio_000000000000-00.mono-fallback";
-            "audio.position" = ["MONO"];
-            "stream.dont-remix" = true;
-            "node.passive" = true;
-          };
-          "playback.props" = {
-            "node.name" = "forced_mic_output";
-            "media.class" = "Audio/Source";
-            "audio.position" = ["MONO"];
+        matches = [
+          {
+            "node.name" = "alsa_input.usb-Solid_State_System_Co._Ltd._LCS_USB_Audio_000000000000-00.mono-fallback";
+          }
+        ];
+
+        actions = {
+          update-props = {
             "audio.volume" = 1.35;
-            "node.param.Props" = {"volume" = 1.35;};
           };
         };
       }
