@@ -21,6 +21,7 @@ in {
       kdePackages.filelight
       kdePackages.partitionmanager
       kdePackages.ark # for dolphin
+      (kdePackages.spectacle.override {tesseractLanguages = ["all"];})
       proton-vpn
       bottles
     ];

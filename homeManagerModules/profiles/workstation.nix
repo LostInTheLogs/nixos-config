@@ -53,8 +53,6 @@ in {
 
       lrcget
       picard
-
-      normcap # ocr
     ];
 
     programs.dimland.enable = true;
