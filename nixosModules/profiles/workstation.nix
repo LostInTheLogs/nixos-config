@@ -19,10 +19,10 @@ in {
         noto-fonts-cjk-sans
         noto-fonts
         noto-fonts-lgc-plus
-        noto-fonts-color-emoji
+        # noto-fonts-color-emoji
         nerd-fonts.fira-code
         twitter-color-emoji
-        twemoji-color-font
+        # twemoji-color-font
         my.iosevka-custom
         corefonts
       ];
@@ -33,40 +33,40 @@ in {
           monospace = ["Iosevka Custom"];
           emoji = ["Twitter Color Emoji"];
         };
-        confPackages = [
-          (pkgs.writeTextFile {
-            name = "fc-twemoji-color-config";
-            destination = "/etc/fonts/conf.d/46-twemoji-color.conf";
-            text = ''
-              <?xml version="1.0" encoding="UTF-8"?>
-              <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-              <fontconfig>
-                <!-- Add emoji generic family -->
-                <alias binding="strong">
-                  <family>emoji</family>
-                  <default><family>Twitter Color Emoji</family></default>
-                </alias>
-
-                <!-- Alias requests for the other emoji fonts -->
-                <alias binding="strong">
-                  <family>Apple Color Emoji</family>
-                  <prefer><family>Twitter Color Emoji</family></prefer>
-                  <default><family>sans-serif</family></default>
-                </alias>
-                <alias binding="strong">
-                  <family>Segoe UI Emoji</family>
-                  <prefer><family>Twitter Color Emoji</family></prefer>
-                  <default><family>sans-serif</family></default>
-                </alias>
-                <alias binding="strong">
-                  <family>Noto Color Emoji</family>
-                  <prefer><family>Twitter Color Emoji</family></prefer>
-                  <default><family>sans-serif</family></default>
-                </alias>
-              </fontconfig>
-            '';
-          })
-        ];
+        # confPackages = [
+        #   (pkgs.writeTextFile {
+        #     name = "fc-twemoji-color-config";
+        #     destination = "/etc/fonts/conf.d/46-twemoji-color.conf";
+        #     text = ''
+        #       <?xml version="1.0" encoding="UTF-8"?>
+        #       <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+        #       <fontconfig>
+        #         <!-- Add emoji generic family -->
+        #         <alias binding="strong">
+        #           <family>emoji</family>
+        #           <default><family>Twitter Color Emoji</family></default>
+        #         </alias>
+        #
+        #         <!-- Alias requests for the other emoji fonts -->
+        #         <alias binding="strong">
+        #           <family>Apple Color Emoji</family>
+        #           <prefer><family>Twitter Color Emoji</family></prefer>
+        #           <default><family>sans-serif</family></default>
+        #         </alias>
+        #         <alias binding="strong">
+        #           <family>Segoe UI Emoji</family>
+        #           <prefer><family>Twitter Color Emoji</family></prefer>
+        #           <default><family>sans-serif</family></default>
+        #         </alias>
+        #         <alias binding="strong">
+        #           <family>Noto Color Emoji</family>
+        #           <prefer><family>Twitter Color Emoji</family></prefer>
+        #           <default><family>sans-serif</family></default>
+        #         </alias>
+        #       </fontconfig>
+        #     '';
+        #   })
+        # ];
       };
     };
 
