@@ -14,7 +14,26 @@ in {
       home-manager.enable = true;
     };
 
-    fonts.packages = with pkgs; [noto-fonts-cjk-sans noto-fonts noto-fonts-lgc-plus noto-fonts-color-emoji];
+    fonts = {
+      packages = with pkgs; [
+        noto-fonts-cjk-sans
+        noto-fonts
+        noto-fonts-lgc-plus
+        noto-fonts-color-emoji
+        my.twemoji
+        nerd-fonts.fira-code
+        my.iosevka-custom
+        corefonts
+      ];
+      fontconfig = {
+        enable = true;
+        defaultFonts = {
+          sansSerif = ["Noto Sans"];
+          monospace = ["Iosevka Custom"];
+          emoji = ["Twitter Color Emoji"];
+        };
+      };
+    };
 
     environment.systemPackages = with pkgs; [
       kdePackages.plasma-pa

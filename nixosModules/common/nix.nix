@@ -12,7 +12,7 @@
     # Lix, the higher performance Nix fork.
     package = pkgs.lix;
 
-    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
     # Collect garbage
     gc = {
