@@ -1,0 +1,213 @@
+{
+  inputs,
+  lib,
+  ...
+}: {
+  flake-file.inputs = {
+    fzf-tab = {
+      url = "github:Aloxaf/fzf-tab";
+      flake = false;
+    };
+    conda-zsh-completion = {
+      url = "github:conda-incubator/conda-zsh-completion";
+      flake = false;
+    };
+  };
+
+  den.aspects.zsh.homeManager = {
+    pkgs,
+    config,
+    ...
+  }: {
+    home.packages = with pkgs; [
+      eza # ls replacement
+      fd
+      fzf
+      ripgrep
+      zoxide
+    ];
+
+    programs.zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting = {
+        enable = true;
+        styles = {
+          "comment" = "fg=8";
+        };
+      };
+      history.path = "$XDG_STATE_HOME/zsh/history";
+      dotDir = "${config.xdg.configHome}/zsh";
+      shellAliases = {
+        cloc = "tokei";
+        ls = "EZA_ICON_SPACING=2 eza -a --icons --group-directories-first";
+        ll = "EZA_ICON_SPACING=2 eza -al --icons --group-directories-first";
+      };
+      oh-my-zsh = {
+        enable = true;
+        extraConfig = ''
+          DISABLE_MAGIC_FUNCTIONS=true
+        '';
+        plugins = [
+          "git"
+          "fzf"
+          "cp"
+          "dnf"
+          "zoxide"
+        ];
+      };
+      initContent = ''
+        setopt nobeep autocd globdots extendedglob nomatch menucomplete interactive_comments
+        bindkey '^H' backward-kill-word #CTRL+BACKSPACE
+      '';
+      plugins = [
+        {
+          name = "fzf-tab";
+          src = inputs.fzf-tab;
+        }
+        {
+          name = "conda-zsh-completion";
+          src = inputs.conda-zsh-completion;
+        }
+        # {
+        #   name = "zsh-nix-dev-completions";
+        #   src = pkgs.fetchFromGitHub {
+        #     owner = "NovaBG03";
+        #     repo = "zsh-nix-dev-completions";
+        #     rev = "2ba15888a8b068408831e3b00b6d5d747804e757";
+        #     sha256 = "sha256-oC0UjCOTr3cCn2zKHk3ofa4C8m79sdHEvrqzF/Vd5fc=";
+        #   };
+        #   file = "plugin.zsh";
+        # }
+        {
+          name = "zsh-completion-sync";
+          src = pkgs.fetchFromGitHub {
+            owner = "BronzeDeer";
+            repo = "zsh-completion-sync";
+            rev = "master";
+            sha256 = "sha256-nTxeSUlYdl25MFZoLtpYTYq661iaik1RMj21ClOMY3c=";
+          };
+          file = "zsh-completion-sync.zsh";
+        }
+      ];
+    };
+
+    programs.starship = {
+      enable = true;
+      settings = {
+        add_newline = false;
+        format = lib.concatStrings [
+          "$container"
+          "$username"
+          "$hostname"
+          "$localip"
+          "$shlvl"
+          "$singularity"
+          "$kubernetes"
+          "$directory"
+          "$vcsh"
+          "$git_branch"
+          "$git_commit"
+          "$git_state"
+          "$git_metrics"
+          "$git_status"
+          "$hg_branch"
+          "$docker_context"
+          "$cmake"
+          "$cobol"
+          "$daml"
+          "$dart"
+          "$deno"
+          "$dotnet"
+          "$elixir"
+          "$elm"
+          "$erlang"
+          "$golang"
+          "$haskell"
+          "$helm"
+          "$julia"
+          "$kotlin"
+          "$nim"
+          "$ocaml"
+          "$perl"
+          "$php"
+          "$pulumi"
+          "$purescript"
+          "$python"
+          "$raku"
+          "$rlang"
+          "$red"
+          "$ruby"
+          "$rust"
+          "$swift"
+          "$terraform"
+          "$vlang"
+          "$vagrant"
+          "$zig"
+          "$buf"
+          "$nix_shell"
+          "$conda"
+          "$spack"
+          "$memory_usage"
+          "$aws"
+          "$gcloud"
+          "$openstack"
+          "$azure"
+          "$env_var"
+          "$crystal"
+          "$custom"
+          "$sudo"
+          "$line_break"
+          "$jobs"
+          "$battery"
+          "$time"
+          "$status"
+          "$shell"
+          "$character"
+        ];
+        right_format = "$cmd_duration";
+        username = {
+          show_always = true;
+          style_user = "bold blue";
+          format = "[\\[](bold bright-blue)[$user]($style)";
+        };
+        hostname = {
+          ssh_only = false;
+          ssh_symbol = "  ";
+          format = "[@](bold bright-blue)[$hostname]($style)[\\]](bold bright-blue)[$ssh_symbol](bright-blue) ";
+          style = "bold blue";
+        };
+        git_branch = {
+          format = "[$symbol$branch(:$remote_branch)]($style) ";
+        };
+        git_status = {
+          style = "bold bright-red";
+          format = "([\\[](bold purple)[$all_status$ahead_behind]($style)[\\]](bold purple) )";
+        };
+        character = {
+          success_symbol = "[](bold green)";
+          error_symbol = "[](bold red)";
+        };
+        line_break = {
+          disabled = true;
+        };
+        container = {
+          format = "[\\[$name\\]]($style) ";
+          disabled = true;
+        };
+        python = {
+          detect_extensions = [];
+        };
+        nix_shell = {
+          symbol = " ";
+        };
+      };
+    };
+
+    programs.direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+  };
+}
