@@ -103,7 +103,23 @@
   ];
 
   musnix.soundcardPciId = "00:1f.3";
-  services.pipewire.wireplumber.extraConfig.micVolume = {
+
+  services.pipewire.wireplumber.extraConfig."99-perms" = {
+    "access.rules" = [
+      {
+        matches = [
+          {"application.process.binary" = "electron";}
+        ];
+        actions = {
+          update-props = {
+            "default_permissions" = "rx";
+          };
+        };
+      }
+    ];
+  };
+
+  services.pipewire.wireplumber.extraConfig."99-micVolume" = {
     "monitor.alsa.rules" = [
       {
         matches = [
