@@ -3,7 +3,7 @@
   den,
   ...
 }: {
-  den.aspects.ocean = {
+  den.aspects.home = {
     includes = [
       den.aspects.common
       den.aspects.profiles._
