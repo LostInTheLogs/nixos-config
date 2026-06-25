@@ -11,6 +11,11 @@
       inputs.nix-index-database.nixosModules.nix-index
     ];
 
+    # corne keyboard
+    services.udev.extraRules = ''
+      KERNEL=="ttyACM*", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="615e", MODE="0660", GROUP="users", TAG+="uaccess"
+    '';
+
     system = {
       # TODO: <https://github.com/NixOS/nixpkgs/issues/349734>
       # autoUpgrade = {
