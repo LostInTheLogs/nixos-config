@@ -22,8 +22,12 @@
     };
 
     programs.gamemode.enable = true;
+    programs.gamescope.enable = true;
 
     environment.systemPackages = with pkgs; [
+      lsfg-vk
+      lsfg-vk-ui
+
       # fixes cursor in steam
       # (pkgs.runCommandLocal "breeze-cursor-default-theme" {} ''
       #   mkdir -p $out/share/icons
@@ -34,7 +38,6 @@
 
       steam-run
       prismlauncher
-      gamescope
       (lutris.override
         {
           extraLibraries = pkgs:
