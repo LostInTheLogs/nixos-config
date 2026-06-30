@@ -57,6 +57,8 @@
       (kdePackages.spectacle.override {tesseractLanguages = ["all"];})
       proton-vpn
       bottles
+
+      calibre
     ];
 
     services.sunshine = {
