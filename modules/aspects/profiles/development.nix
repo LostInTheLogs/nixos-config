@@ -1,9 +1,20 @@
-{
-  den.aspects.profiles.development.nixos = {pkgs, ...}: {
-    virtualisation.containers.enable = true;
+{lib, ...}: {
+  den.aspects.profiles.development.nixos = {
+    pkgs,
+    config,
+    ...
+  }: {
+    systemd.timers.docker-starter = lib.mkIf config.virtualisation.docker.enable {
+      wantedBy = ["timers.target"];
+      timerConfig = {
+        OnBootSec = "5s";
+        Unit = "docker.service";
+      };
+    };
     virtualisation = {
       docker = {
         enable = true;
+        enableOnBoot = false; # timer instead to speed up boot
       };
       podman = {
         enable = false;
