@@ -139,7 +139,7 @@
       # youtube-music
 
       vesktop
-      discord
+      (pkgs.discord.override {withVencord = true;})
       obsidian
       # josm
       unstable.deskflow
