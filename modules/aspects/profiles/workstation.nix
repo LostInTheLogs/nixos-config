@@ -133,6 +133,30 @@
       '';
     };
   in {
+    programs.mpv = {
+      enable = true;
+
+      package = (
+        pkgs.mpv.override {
+          scripts = with pkgs.mpvScripts; [
+            autosub
+            autosubsync-mpv
+            webtorrent-mpv-hook
+            sponsorblock-minimal
+            modernx
+            pkgs.mpvScripts.builtins.autocrop
+            pkgs.mpvScripts.eisa01.smartskip
+          ];
+        }
+      );
+
+      config = {
+        profile = "high-quality";
+        ytdl-format = "bestvideo+bestaudio";
+        cache-default = 4000000;
+      };
+    };
+
     home.packages = with pkgs; [
       ungoogled-chromium
 
