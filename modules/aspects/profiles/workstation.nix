@@ -143,7 +143,7 @@
             autosubsync-mpv
             webtorrent-mpv-hook
             sponsorblock-minimal
-            modernx
+            modernz
             pkgs.mpvScripts.builtins.autocrop
             pkgs.mpvScripts.eisa01.smartskip
           ];
