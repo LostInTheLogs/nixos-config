@@ -157,6 +157,8 @@
       config = {
         profile = "high-quality";
         ytdl-format = "bestvideo+bestaudio";
+        sub-pos = 102;
+        sub-scale = 0.6;
       };
     };
 
