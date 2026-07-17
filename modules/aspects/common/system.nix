@@ -69,6 +69,7 @@
     documentation.man.cache.enable = true;
 
     services.xserver.xkb.layout = "pl";
+    services.xserver.xkb.options = "compose:menu,terminate:ctrl_alt_bksp";
     console.keyMap = "pl";
   };
 }
