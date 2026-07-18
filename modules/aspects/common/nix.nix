@@ -9,9 +9,11 @@
       enable = true;
     };
 
+    programs.direnv.nix-direnv.package = pkgs.lixPackageSets.nix-direnv;
+
     nix = {
       # Lix, the higher performance Nix fork.
-      package = pkgs.lix;
+      package = pkgs.lixPackageSets.stable.lix;
 
       nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
@@ -189,6 +191,21 @@
       overlays = [
         inputs.self.outputs.overlays.unstable
         inputs.self.outputs.overlays.my
+        (_final: prev: let
+          lixPackageSets = prev.lixPackageSets.override {inherit (prev) colmena nix-direnv nix-fast-build nix-update nixpkgs-review;};
+        in {
+          inherit lixPackageSets;
+          inherit
+            (lixPackageSets.stable)
+            colmena
+            lix
+            nix-direnv
+            nix-eval-jobs
+            nix-fast-build
+            nix-update
+            nixpkgs-review
+            ;
+        })
       ];
     };
 
