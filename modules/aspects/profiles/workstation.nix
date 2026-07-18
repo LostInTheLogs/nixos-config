@@ -144,6 +144,7 @@
             webtorrent-mpv-hook
             sponsorblock-minimal
             modernz
+            mpris
             pkgs.mpvScripts.builtins.autocrop
             pkgs.mpvScripts.eisa01.smartskip
           ];
