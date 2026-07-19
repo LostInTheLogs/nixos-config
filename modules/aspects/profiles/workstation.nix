@@ -152,7 +152,7 @@
       );
 
       scriptOpts."webtorrent" = {
-        path = "~/Documents/mpv/";
+        path = "~/Videos/mpv/";
       };
 
       config = {
