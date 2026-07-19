@@ -151,8 +151,19 @@
         }
       );
 
-      scriptOpts."webtorrent" = {
-        path = "~/Videos/mpv/";
+      scriptOpts = {
+        webtorrent = {
+          path = "~/Videos/mpv/";
+        };
+
+        osc = {
+          chapters_osd = false;
+          playlist_osd = false;
+        };
+
+        autocrop = {
+          auto = false;
+        };
       };
 
       config = {
@@ -160,6 +171,7 @@
         ytdl-format = "bestvideo+bestaudio";
         sub-pos = 102;
         sub-scale = 0.6;
+        osd-bar = false;
       };
     };
 
