@@ -58,7 +58,7 @@ in
     '';
 
     makeFlags = [
-      "EMOJI=MyTwitterColorEmoji"
+      "EMOJI=TwitterColorEmoji"
       "EMOJI_SRC_DIR=${twemojiSrc.name}/assets/72x72"
       "FLAGS="
       "BODY_DIMENSIONS=76x72"
