@@ -7,10 +7,10 @@
         noto-fonts-lgc-plus
         noto-fonts-color-emoji
         nerd-fonts.fira-code
-        twitter-color-emoji
         my.iosevka-custom
         corefonts
-        # twemoji-color-font
+        my.twitter-color-emoji
+        # twitter-color-emoji
       ];
       fontconfig = {
         enable = true;
