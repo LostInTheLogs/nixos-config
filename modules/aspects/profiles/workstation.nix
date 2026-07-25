@@ -61,6 +61,10 @@
       calibre
     ];
 
+    networking.firewall.allowedTCPPorts = [
+      9090 #calibre
+    ];
+
     services.sunshine = {
       enable = true;
       autoStart = true;
