@@ -60,6 +60,7 @@
       zellij
       vscodium-fhs
 
+      difftastic
       unstable.neovim
       nixd
       alejandra
