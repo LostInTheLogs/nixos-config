@@ -152,6 +152,7 @@
             pkgs.mpvScripts.builtins.autocrop
             pkgs.mpvScripts.eisa01.smartskip
             pkgs.mpvScripts.eisa01.undoredo
+            pkgs.mpvScripts.eisa01.smart-copy-paste-2
           ];
         }
       );
