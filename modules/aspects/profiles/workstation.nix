@@ -151,6 +151,7 @@
             mpris
             pkgs.mpvScripts.builtins.autocrop
             pkgs.mpvScripts.eisa01.smartskip
+            pkgs.mpvScripts.eisa01.undoredo
           ];
         }
       );
@@ -167,6 +168,10 @@
 
         autocrop = {
           auto = false;
+        };
+
+        SmartSkip = {
+          autoskip_chapter = false;
         };
       };
 
