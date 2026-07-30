@@ -128,9 +128,9 @@
   }: let
     ai-krita = pkgs.writeShellApplication {
       name = "ai-krita";
-      runtimeInputs = [
-        pkgs.krita
-        pkgs.steam-run
+      runtimeInputs = with pkgs; [
+        krita
+        steam-run
       ];
       text = ''
         SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt steam-run krita
@@ -150,6 +150,7 @@
             modernz
             mpris
             pkgs.mpvScripts.builtins.autocrop
+            pkgs.mpvScripts.eisa01.simplehistory
             pkgs.mpvScripts.eisa01.smartskip
             pkgs.mpvScripts.eisa01.undoredo
             pkgs.mpvScripts.eisa01.smart-copy-paste-2
