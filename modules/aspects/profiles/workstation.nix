@@ -183,6 +183,10 @@
         sub-pos = 102;
         sub-scale = 0.6;
         osd-bar = false;
+        alang = "en,eng,enUS,en-US";
+        slang = "en,eng,enUS,en-US";
+        sub-auto = "fuzzy";
+        subs-with-matching-audio = "forced";
       };
     };
 
