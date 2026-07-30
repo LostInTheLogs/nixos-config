@@ -143,7 +143,7 @@
       package = (
         pkgs.mpv.override {
           scripts = with pkgs.mpvScripts; [
-            autosub
+            # autosub # needs python subliminal cli
             autosubsync-mpv
             webtorrent-mpv-hook
             sponsorblock-minimal
