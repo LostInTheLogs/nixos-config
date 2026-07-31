@@ -150,6 +150,7 @@
             modernz
             mpris
             pkgs.mpvScripts.builtins.autocrop
+            pkgs.mpvScripts.builtins.autoload
             pkgs.mpvScripts.eisa01.simplehistory
             pkgs.mpvScripts.eisa01.smartskip
             pkgs.mpvScripts.eisa01.undoredo
