@@ -118,6 +118,7 @@
           "https://ai.cachix.org"
           "https://cuda-maintainers.cachix.org"
           "https://numtide.cachix.org"
+          "https://cache.iog.io"
         ];
 
         trusted-public-keys = [
@@ -128,6 +129,7 @@
           "ai.cachix.org-1:N9dzRK+alWwoKXQlnn0H6aUx0lU/mspIoz8hMvGvbbc="
           "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
           "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
+          "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
         ];
 
         # lix only
