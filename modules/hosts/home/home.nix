@@ -69,6 +69,8 @@
       };
 
       musnix.soundcardPciId = "00:1f.3";
+      # musnix.kernel.realtime = true;
+      # musnix.kernel.packages = pkgs.linuxPackages_latest;
 
       services.pipewire.wireplumber.extraConfig."99-perms" = {
         "access.rules" = [

@@ -7,7 +7,7 @@
     musnix.url = "github:musnix/musnix";
   };
 
-  den.aspects.profiles.music.nixos = {pkgs, ...}: let
+  den.aspects.profiles.audio.nixos = {pkgs, ...}: let
     yabridge-wine = pkgs.writeShellScriptBin "yabridge-wine" ''
       exec ${pkgs.wineWow64Packages.yabridge}/bin/wine "$@"
     '';
@@ -54,7 +54,7 @@
     };
   };
 
-  den.aspects.profiles.music.homeManager = {
+  den.aspects.profiles.audio.homeManager = {
     pkgs,
     osConfig,
     ...
