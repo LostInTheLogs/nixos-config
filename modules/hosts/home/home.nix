@@ -24,6 +24,8 @@
           common-pc-ssd
         ]);
 
+      networking.firewall.trustedInterfaces = ["enp6s0"];
+
       virtualisation.libvirtd.enable = true;
       virtualisation.spiceUSBRedirection.enable = true;
       virtualisation.virtualbox.host.enable = true;
