@@ -47,7 +47,6 @@
           "networkmanager"
           "wireshark"
           "mysql"
-          "docker"
           "podman"
           "git"
           "libvirtd"
