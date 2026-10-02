@@ -8,5 +8,5 @@
 
   den.hosts.x86_64-linux.test-vm.users.vodfsh = {};
 
-  den.hosts.x86_64-linux.aquarium.users.vodfsh = {};
+  den.hosts.x86_64-linux.nautilus.users.vodfsh = {};
 }

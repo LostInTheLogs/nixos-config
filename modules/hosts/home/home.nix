@@ -65,10 +65,11 @@
         openFirewall = true;
       };
 
-      zramSwap = {
-        enable = true;
-        memoryPercent = 20;
-      };
+      # swap in ./_hardware-configuration.nix instead
+      # zramSwap = {
+      #   enable = true;
+      #   memoryPercent = 20;
+      # };
 
       musnix.soundcardPciId = "00:1f.3";
       # musnix.kernel.realtime = true;

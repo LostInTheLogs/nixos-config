@@ -23,6 +23,7 @@
 
     programs.gamemode.enable = true;
     programs.gamescope.enable = true;
+    programs.gamescope.package = pkgs.unstable.gamescope;
 
     environment.systemPackages = with pkgs; [
       lsfg-vk
@@ -37,6 +38,7 @@
       xrdb
 
       steam-run
+      r2modman
       prismlauncher
       (lutris.override
         {

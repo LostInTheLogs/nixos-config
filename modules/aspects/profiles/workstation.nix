@@ -77,7 +77,6 @@
     services.earlyoom = {
       enable = true;
       enableNotifications = true;
-      freeMemThreshold = 3;
     };
     systemd.services.earlyoom.serviceConfig.User = "vodfsh"; # TODO: remove https://github.com/NixOS/nixpkgs/pull/375649
 

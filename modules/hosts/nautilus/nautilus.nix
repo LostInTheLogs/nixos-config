@@ -10,7 +10,7 @@
     };
   };
 
-  den.aspects.aquarium = {
+  den.aspects.nautilus = {
     includes = [
       den.aspects.common
       den.aspects.profiles._
@@ -65,7 +65,7 @@
 
       time.hardwareClockInLocalTime = true; #  dual booting windows :/
 
-      # networking.networkmanager.wifi.powersave = false;
+      networking.networkmanager.wifi.powersave = false;
 
       system.stateVersion = "24.05";
     };

@@ -23,7 +23,7 @@ Info:
   Processes: 381 Uptime: 2h 35m Shell: Sudo inxi: 3.3.39
 ```
 
-## aether (Legion 5 Pro 16ARH7H)
+## nautilus (Legion 5 Pro 16ARH7H)
 
 ```
 System:
@@ -52,4 +52,4 @@ Info:
   Processes: 426 Uptime: N/A Init: systemd Shell: Sudo inxi: 3.3.39
 ```
 
-### hades (Windows 11 dual booted on aether)
+### hades (Windows 11 dual booted on nautilus)
