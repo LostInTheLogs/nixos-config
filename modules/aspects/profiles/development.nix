@@ -66,6 +66,9 @@
       alejandra
       gh
 
+      #uni
+      jetbrains.idea
+
       # tmp
       nodejs
       pnpm
