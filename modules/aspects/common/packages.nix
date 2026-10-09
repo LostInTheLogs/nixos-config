@@ -7,6 +7,7 @@
       pciutils
       btop
       p7zip
+      unrar
 
       man-pages
     ];
