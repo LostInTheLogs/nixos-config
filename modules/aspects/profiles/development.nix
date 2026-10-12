@@ -69,6 +69,12 @@
       #uni
       jetbrains.idea
       jetbrains.rider
+      icu
+      (with dotnetCorePackages;
+        combinePackages [
+          dotnetCorePackages.sdk_10_0-bin
+        ])
+      mono
 
       # tmp
       nodejs
