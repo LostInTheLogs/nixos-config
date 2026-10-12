@@ -68,6 +68,7 @@
 
       #uni
       jetbrains.idea
+      jetbrains.rider
 
       # tmp
       nodejs
