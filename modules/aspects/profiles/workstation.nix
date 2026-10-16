@@ -1,5 +1,13 @@
 {
-  den.aspects.profiles.workstation.nixos = {pkgs, ...}: {
+  flake-file.inputs = {
+    pipewire-screenaudio.url = "github:IceDBorn/pipewire-screenaudio";
+  };
+
+  den.aspects.profiles.workstation.nixos = {
+    pkgs,
+    inputs',
+    ...
+  }: {
     fonts = {
       packages = with pkgs; [
         noto-fonts-cjk-sans
@@ -73,6 +81,9 @@
     # };
 
     programs.firefox.enable = true;
+    programs.firefox.nativeMessagingHosts.packages = [
+      inputs'.pipewire-screenaudio.packages.default
+    ];
 
     services.earlyoom = {
       enable = true;

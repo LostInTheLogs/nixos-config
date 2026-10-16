@@ -39,5 +39,6 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    pipewire-screenaudio.url = "github:IceDBorn/pipewire-screenaudio";
   };
 }

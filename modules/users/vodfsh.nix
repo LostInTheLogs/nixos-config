@@ -5,6 +5,7 @@
 }: {
   den.aspects.vodfsh = {
     includes = [
+      den.batteries.inputs'
       den.batteries.define-user
       den.batteries.primary-user
       den.batteries.host-aspects
